@@ -1214,6 +1214,10 @@ I18N.add({
 });
 // realm unique units/buildings line: "Unique: <unit> (unit) and <building> (building)"
 I18N.rule(/^Unique: (.+) \(unit\) and (.+) \(building\)$/, (m, t) => '고유: ' + t(m[1]) + ' (유닛), ' + t(m[2]) + ' (건물)', true);
+// composed fragments: "— blurb" (after the bold hero/realm name), “motto” and saga list "N. Title."
+I18N.rule(/^— (.+)$/, (m, t) => t(m[1]) !== m[1] ? '— ' + t(m[1]) : null, true);
+I18N.rule(/^“(.+)”$/, (m, t) => t(m[1]) !== m[1] ? '“' + t(m[1]) + '”' : null, true);
+I18N.rule(/^(\d+)\. (.+)\.$/, (m, t) => t(m[2]) !== m[2] ? m[1] + '. ' + t(m[2]) + '.' : null, true);
 
 // ---- 01_core.js ----
 'use strict';

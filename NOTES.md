@@ -1,4 +1,4 @@
-# NOTES (I1 → I2)
+# NOTES (I1 → I2 → I3)
 - 원작: SharpWizard/ironvale, source commit 41672ef32a42c154b237e579cdf357144709204a (2026-11-12, "README: note that the game is currently made for PC")
 - 작업 폴더: /mnt/workspace/ironvale-ko (sandbox), build: `node build.js` (Node 22, 의존성 없음)
 - 빌드: src/NN_*.js 를 정렬해 src/shell.html 의 /*__GAME_JS__*/ 에 합쳐 ironvale.html 생성. models/*.js(16MB), lib/three.min.js 는 외부 파일.
@@ -18,7 +18,7 @@
 | 10_ui.js | 명령 버튼 제목/설명, 정보 패널, 알림, 연대기/종료 화면 템플릿 | ~81 | I1 + I2 완료(미번역 0, tools/check-i18n.js) |
 | 17_ui2.js | 사건 기록, 생산 바, 기술 트리, 단축키 편집, 주민 목록 | ~33 | I2 완료(미번역 0) |
 | 11_main.js / 09_input.js / 06_entities.js / 14_atmos.js / 15_extras.js | 알림·오류·세이브 메시지 | ~35 | I1 규칙 + I2 오류/종료 메시지 규칙 |
-| 13_content.js | 캠페인 3개/10장 스토리·세력 설정·연대기·비트(목표 문구 제외) | ~66 문자열 | I3 (미착수) |
+| 13_content.js | 캠페인 3개/10장 스토리·세력 설정·연대기·비트(목표 문구 제외) | ~135 문자열 | I3 완료(src/00_i18n_ko3.js, 미번역 0) |
 | 15_extras.js 튜토리얼 Guide | 단계 8개 + 머리글 | 9 | I2 완료 |
 | 13_content.js 목표 문구 | 트래커에 표시되는 목표 27종(사전에서만 번역, 파일은 수정 안 함) | 27 | I2 완료 |
 
@@ -42,3 +42,18 @@
 - 페이지: https://sigco3111.github.io/ironvale-ko/ironvale.html?v=<난수> (캐시 비활성). 메인 메뉴·설정·1장 시작 후 15초: 콘솔 error/warning/uncaught/unhandledrejection/리소스 오류 0건 (console.* 후킹 + window error 캡처, CDP 이벤트는 이 환경에서 전달되지 않아 페이지 내 후킹으로 대체).
 - 1장 HUD 도달, 정보 패널(마을 회관/주민), 카메라 패널(날씨: 자동), 명령 툴팁(설명·체력/공격/방어/초), 튜토리얼 Guide(안내 · 1/8단계), 목표 트래커(◆ 봉건 시대로 발전 …), 기술 트리 툴팁, 주민 목록(석재 표기 수정) 한국어 확인.
 - 실수: 처음 목표 항목이 '◆ ' 기호가 앞에 붙은 한 텍스트 노드라 번역이 안 됨 → 기호 규칙 추가. 주민 목록의 'Stone'이 '스톤'으로 나옴 → 소스 수정. 이 환경의 소프트웨어 렌더링으로 게임 시간이 느리게 흘러(15초에 게임 1초 미만) 장시간 플레이 확인은 안 함.
+
+## I3 (이번 단계)
+- 새 파일 src/00_i18n_ko3.js: 사전 135개(캠페인 3개 이름·영웅·소개, 장 제목·소개·결말 10장, 진행 중 대사 30, 연대기 6, 세력 5개 표어·성향·설명·보너스, 지도 테마 5) + 규칙 1개(`Unique: X (unit) and Y (building)` → `고유: X (유닛), Y (건물)`). 13_content.js 는 수정하지 않음(표시 단계 번역).
+- 문체: 서술은 합니다체, 지시문은 하세요체(튜토리얼과 동일), 대사는 말투에 맞는 존댓말.
+- 고유명: 바른(Varn), 사르나이(Sarnai), 힐드(Hild), 브라노크(Brannoch), 바타르(Bataar), 개로우(Garrow), 청지기(Steward), 족장(Thane), 바람의 어머니(Windmother), 맹세의 돌(Oathstone), 회색 암말 부족(Grey Mare). 캠페인: 아이언베일의 균열 / 긴 바람의 기수들 / 스톤홀트의 맹세. 장: 푸른 계곡·해적 해안·태고의 야생지·텅 빈 늪 / 부족의 집결·앰버 가도·아즈르의 성벽 / 깊은 뿌리·텅 빈 늪의 왕·맹세의 돌.
+- **보스 이름 최종 확정: 폭군(The Tyrant), 붉은수염 선장(Captain Redbeard), 무덤 기사(Grave Knight)** — 임시 아님.
+- 주의: tools/check-i18n.js 는 따옴표로 끝나는 조각(진행 중 대사 `Name: "..."`)을 건너뛰므로 대사는 /tmp 스크립트로 별도 확인(전부 사전에 있음).
+- 검사: `node build.js` 통과, `node tools/check-i18n.js 13_content.js` 미번역 0, 기본 검사 4개 파일도 0.
+- 조합 조각 규칙 3개 추가(라이브 확인 중 발견): `— 소개`(굵은 영웅/세력 이름 뒤 텍스트 노드), `“표어”`, `N. 장 제목.`(연대기 전설 목록) — 실수: 처음 올린 빌드는 이 3곳이 영어로 남았고 재업로드로 수정.
+- 규칙 수정으로 src/00_i18n_ko3.js 와 ironvale.html 을 재업로드(커밋 모두 '게임: ').
+
+## 라이브 확인 (I3)
+- 페이지: https://sigco3111.github.io/ironvale-ko/ironvale.html?v=<난수> (캐시 비활성), 페이지 내 console.error/warn·window error·unhandledrejection 후킹.
+- 메인 메뉴(캠페인 3개 이름·장 목록), 캠페인 소개문, 연대기(세계 6·왕국 5·전설 목록/결말), 스커미시 세력 설명·지도 설명, 1장 시작 브리핑(제목·소개 3문단·목표·시작) 한국어 확인. 콘솔 error/warning/uncaught/unhandledrejection 0건.
+- 진행 중 대사(비트)는 사전에 전부 있음(스크립트 확인)이나 라이브 재생은 확인하지 않음(소프트웨어 렌더링으로 게임 시간이 느림).

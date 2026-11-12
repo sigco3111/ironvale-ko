@@ -800,6 +800,12 @@ I18N.add({
   'Defaults': '기본값', 'Begin': '시작', 'Victory': '승리', 'Defeat': '패배', 'Next Chapter ▶': '다음 장 ▶', 'Play Again': '다시 하기', 'Main Menu': '메인 메뉴',
   'Replay Chapter': '장 다시 하기', 'Retry Chapter': '장 다시 도전',
   'Every slot needs a letter.': '모든 칸에 글자가 필요합니다.', 'W A S D Q E P M are used by the camera and menus.': 'W A S D Q E P M 은 카메라와 메뉴에 사용됩니다.', 'Each letter can only be used once.': '글자는 한 번씩만 쓸 수 있습니다.',
+  // ---- misc menu / info panel ----
+  'Play': '플레이', 'Locked': '잠김', 'Continue': '이어하기',
+  'Green Vale': '푸른 계곡', 'Iron Highlands': '철의 고원', 'Corsair Coast': '해적 해안', 'Primeval Wilds': '태고의 야생지', 'Hollow Marsh': '텅 빈 늪',
+  'Level': '레벨', 'Population': '인구', 'Arrows': '화살', 'dmg · range': '피해 · 사거리', 'Garrison': '주둔', 'Accepts': '수용 자원',
+  'Attack': '공격력', 'Armor': '방어', 'Range': '사거리', 'Speed': '속도', 'melee': '근접', 'Carrying': '운반 중', 'Gathering': '채집 중', 'Returning': '복귀 중',
+  'Under construction:': '건설 중:', 'Food left': '남은 식량', 'Victory in': '승리까지', 'Weather:': '날씨:',
   // ---- notifications (fixed) ----
   'Saved game loaded': '저장한 게임을 불러왔습니다', 'Game saved': '게임을 저장했습니다',
   'Your base is under attack!': '기지가 공격받고 있습니다!', 'Your army is under attack!': '군대가 공격받고 있습니다!',
@@ -830,9 +836,11 @@ I18N.addAttr({ 'Stone': '석재' });
 const _RK = { food: '식량', wood: '목재', stone: '석재', gold: '금' };
 const _rk = s => _RK[s.toLowerCase()] || s;
 [
-  [/^Build (.+?)( ★)?$/, (m, t) => t(m[1]) + ' 건설' + (m[2] || '')],
-  [/^Train (.+?)( ★)?$/, (m, t) => t(m[1]) + ' 훈련' + (m[2] || '')],
-  [/^Requires (?:a )?(.+)$/, (m, t) => '필요: ' + t(m[1])],
+  [/^Build (.+?)( ★)?$/, (m, t) => t(m[1]) !== m[1] ? t(m[1]) + ' 건설' + (m[2] || '') : null],
+  [/^Train (.+?)( ★)?$/, (m, t) => t(m[1]) !== m[1] ? t(m[1]) + ' 훈련' + (m[2] || '') : null],
+  [/^Requires (?:a )?(.+)$/, (m, t) => t(m[1]) !== m[1] ? '필요: ' + t(m[1]) : null],
+  [/^(.+) · (.+)$/, (m, t) => { const a = t(m[1]), b = t(m[2]); return a !== m[1] || b !== m[2] ? a + ' · ' + b : null; }],
+  [/^vs (.+)$/, (m, t) => t(m[1]) !== m[1] ? 'vs ' + t(m[1]) : null],
   [/^Not enough (food|wood|stone|gold)$/i, m => _rk(m[1]) + ' 부족'],
   [/^(food|wood|stone|gold)$/i, m => _rk(m[1])],
   [/^Place (.+) \(right click to cancel\)$/, (m, t) => t(m[1]) + ' 배치 (오른쪽 클릭으로 취소)'],

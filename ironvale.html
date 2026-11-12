@@ -673,7 +673,7 @@ const I18N = (() => {
     sync(); observe();
     if (lang === 'ko') walk(document.body);
   }
-  return { t: tr, set, get lang() { return lang; }, add(d) { Object.assign(ko, d); }, addAttr(d) { Object.assign(koAttr, d); }, rule(re, fn) { rules.push([re, fn]); }, start };
+  return { t: tr, set, get lang() { return lang; }, add(d) { Object.assign(ko, d); }, addAttr(d) { Object.assign(koAttr, d); }, rule(re, fn, first) { if (first) rules.unshift([re, fn]); else rules.push([re, fn]); }, start };
 })();
 function t(s) { return I18N.t(s); }
 
@@ -864,6 +864,172 @@ const _rk = s => _RK[s.toLowerCase()] || s;
   [/^Wonder (\d+:\d+)$/, m => '불가사의 ' + m[1]],
 ].forEach(([re, fn]) => I18N.rule(re, fn));
 I18N.start();
+
+// ---- 00_i18n_ko2.js ----
+// Korean dictionary (I2: info panel, camera panel, tooltips, unit/building/tech descriptions, tutorial guide, objectives tracker).
+// Keys = original English text (whitespace collapsed). Terms follow the glossary in NOTES.md.
+I18N.add({
+  // ---- unit descriptions ----
+  'Gathers resources, constructs and repairs buildings. Can garrison inside the Town Center.': '자원을 채집하고 건물을 짓고 수리합니다. 마을 회관 안에 주둔할 수 있습니다.',
+  'Fast mounted scout with wide sight. Strong vs archers and siege.': '시야가 넓은 빠른 기마 정찰병. 궁수와 공성 병기에 강합니다.',
+  'Cheap infantry with a long spear. Counters cavalry.': '긴 창을 든 저렴한 보병. 기병을 막아냅니다.',
+  'Armored melee infantry. A sturdy all-rounder.': '갑옷을 입은 근접 보병. 든든한 만능 병종입니다.',
+  'Ranged foot soldier. Counters infantry. Weak against cavalry.': '원거리 보병. 보병에 강하고 기병에 약합니다.',
+  'Upgraded ranged infantry with a heavier bolt. Counters infantry.': '더 묵직한 볼트를 쏘는 상급 원거리 보병. 보병에 강합니다.',
+  'Heavy cavalry. Crushes archers and siege. Fears spearmen.': '중기병. 궁수와 공성 병기를 짓밟지만 창병을 두려워합니다.',
+  'Fires heavy shot at buildings and walls from short range. Nearly immune to arrows, vulnerable to melee.': '짧은 사거리에서 건물과 성벽에 중포탄을 쏩니다. 화살에는 거의 피해를 입지 않지만 근접 공격에 취약합니다.',
+  'Long-range siege engine. Area damage, great against groups and buildings.': '장거리 공성 병기. 범위 피해를 주며 집단과 건물에 탁월합니다.',
+  'Skittish game. Flees when hunted.': '겁 많은 사냥감. 사냥당하면 도망칩니다.',
+  'Large, fast game. Flees when hunted. Lots of meat.': '크고 빠른 사냥감. 사냥당하면 도망칩니다. 고기가 많습니다.',
+  'Wild goat. Flees when hunted.': '야생 염소. 사냥당하면 도망칩니다.',
+  'Easy game bird. Flees a short distance.': '잡기 쉬운 새. 조금만 도망칩니다.',
+  'Dangerous! Charges hunters. Send several villagers. Huge amount of meat.': '위험! 사냥꾼에게 돌진합니다. 주민 여러 명을 보내세요. 고기가 아주 많습니다.',
+  'Village livestock. Does not flee — easy food near your town.': '마을 가축. 도망치지 않으니 마을 근처의 손쉬운 식량입니다.',
+  'Village poultry. Does not flee — quick food.': '마을 가금. 도망치지 않는 간편한 식량입니다.',
+  // ---- building descriptions ----
+  'Trains villagers, accepts all resources, shoots arrows. Villagers can garrison inside (+1 arrow each).': '주민을 훈련하고 모든 자원을 받으며 화살을 쏩니다. 주민이 안에 주둔할 수 있습니다 (1명당 화살 +1).',
+  '+5 population capacity.': '인구 수용량 +5.',
+  'Drop-off point for wood. Counts toward the next age.': '목재 하역지. 다음 시대 조건에 포함됩니다.',
+  'Drop-off point for gold and stone. Counts toward the next age.': '금과 석재 하역지. 다음 시대 조건에 포함됩니다.',
+  'Drop-off point for food. Required for farms. Counts toward the next age.': '식량 하역지. 농장을 지으려면 필요합니다. 다음 시대 조건에 포함됩니다.',
+  'Slow but steady food source worked by one villager. Expires once exhausted.': '주민 한 명이 일하는 느리지만 꾸준한 식량원. 수확이 끝나면 사라집니다.',
+  'Trains infantry. Counts toward the next age.': '보병을 훈련합니다. 다음 시대 조건에 포함됩니다.',
+  'Trains archers. Counts toward the next age.': '궁수를 훈련합니다. 다음 시대 조건에 포함됩니다.',
+  'Trains cavalry. Counts toward the next age.': '기병을 훈련합니다. 다음 시대 조건에 포함됩니다.',
+  'Researches attack and armor upgrades. Counts toward the next age.': '공격과 방어 업그레이드를 연구합니다. 다음 시대 조건에 포함됩니다.',
+  'Defensive tower that shoots arrows. Garrison units for extra arrows.': '화살을 쏘는 방어탑. 유닛을 주둔시키면 화살이 늘어납니다.',
+  'Blocks movement. Click a start and an end point to build a line.': '이동을 막습니다. 시작점과 끝점을 클릭해 일렬로 짓습니다.',
+  'Lets your units through, blocks enemies. Can replace a wall segment.': '내 유닛은 통과시키고 적은 막습니다. 벽 한 칸을 대체할 수 있습니다.',
+  'Builds siege engines.': '공성 병기를 만듭니다.',
+  'Mighty fortress. Fires volleys of arrows and trains elite troops.': '강력한 요새. 화살을 일제히 쏘고 정예 병력을 훈련합니다.',
+  'A monument to your realm. Defend it for 5 minutes after completion to win.': '내 왕국의 기념비. 완공 후 5분간 지켜 내면 승리합니다.',
+  // ---- tech descriptions ----
+  'Unlocks military buildings, towers, walls and upgrades. Requires 2 of: Lumber Camp, Mining Camp, Mill.': '군사 건물, 탑, 성벽, 업그레이드를 해금합니다. 벌목 캠프, 광산 캠프, 방앗간 중 2종이 필요합니다.',
+  'Unlocks siege, Knights, Crossbowmen, Castle and Wonder. Requires 2 of: Barracks, Archery Range, Stable, Blacksmith.': '공성 병기, 기사, 석궁병, 성채, 불가사의를 해금합니다. 병영, 사격장, 마구간, 대장간 중 2종이 필요합니다.',
+  'Villagers +15 HP, +1 melee / +2 pierce armor.': '주민 체력 +15, 근접 방어 +1 / 관통 방어 +2.',
+  'Villagers move 10% faster and carry +5.': '주민 이동 속도 10% 증가, 운반량 +5.',
+  'Wood gathering +20%.': '목재 채집 +20%.',
+  'Gold mining +15%.': '금 채굴 +15%.',
+  'Stone mining +15%.': '석재 채굴 +15%.',
+  'New farms hold +100 food.': '새 농장의 식량 +100.',
+  'Infantry and cavalry +1 attack.': '보병과 기병 공격력 +1.',
+  'Infantry and cavalry +1 melee / +1 pierce armor.': '보병과 기병 근접 방어 +1 / 관통 방어 +1.',
+  'Archers, towers, castles and Town Centers +1 attack and +1 range.': '궁수, 탑, 성채, 마을 회관 공격력 +1, 사거리 +1.',
+  'Archers +1 melee / +1 pierce armor.': '궁수 근접 방어 +1 / 관통 방어 +1.',
+  // ---- info panel / HUD pieces ----
+  'Send the selected army against the nearest known enemy building (or the enemy homeland if none has been scouted). Herbalists follow behind.': '선택한 군대를 가장 가까운 적 건물로 보냅니다 (정찰한 건물이 없으면 적의 본거지로). 약초사는 뒤따라갑니다.',
+  '⚡ off': '⚡ 끔',
+  'Select a unit or building. Right click to command.<br>Press <b>.</b> for idle villagers, <b>,</b> for your army.': '유닛이나 건물을 선택하세요. 오른쪽 클릭으로 명령합니다.<br><b>.</b> 키는 유휴 주민, <b>,</b> 키는 전체 군대를 선택합니다.',
+  'Commands train in the building with the shortest queue.': '명령은 대기열이 가장 짧은 건물에서 훈련됩니다.',
+  'Moving': '이동 중', 'Garrisoning': '주둔하러 가는 중', 'Fighting': '전투 중', 'Attack-moving': '공격 이동 중', 'Building': '건설 중',
+  'Training': '훈련 중', 'Upgrading': '업그레이드 중',
+  'Fights back!': '반격합니다!', 'Livestock': '가축', 'Flees': '도망침',
+  'Tree': '나무', 'Gold Mine': '금광', 'Stone Mine': '석재 광산', 'Berry Bush': '딸기 덤불', 'Carcass': '사체',
+  'Ham (fresh kill)': '햄 (갓 잡음)', 'Meat (fresh kill)': '고기 (갓 잡음)', 'Fish (fresh catch)': '생선 (갓 잡음)',
+  'Clear night': '맑은 밤',
+  'Click to cancel': '클릭하면 취소',
+  'Cavalry': '기병', 'Archers': '궁수', 'Infantry': '보병', 'Siege': '공성', 'Buildings': '건물', 'Villagers': '주민',
+  'Spearmen': '창병', 'Melee units': '근접 유닛', 'All soldiers': '모든 병사', '✚ Heals nearby units': '✚ 주변 유닛 치료',
+  // ---- panels: event log, production, villagers, tech tree, hotkeys ----
+  'Select': '선택', 'Select these villagers': '이 주민들 선택',
+  'Units': '유닛', 'Upgrades': '업그레이드', '(current)': '(현재)',
+  'Army size': '군대 규모',
+  // ---- save slots ----
+  'Autosave': '자동 저장', 'Overwrite?': '덮어쓸까요?', 'Save here': '여기에 저장', 'Load': '불러오기', 'Sure?': '삭제할까요?', 'Empty': '비어 있음',
+  'Delete this save': '이 저장 삭제',
+  // ---- menus / chapters / chronicle / end screen ----
+  '🔒 Locked': '🔒 잠김',
+  '🔒 Finish this chapter to record its ending.': '🔒 이 장을 마치면 결말이 기록됩니다.',
+  'The World of Ironvale': '아이언베일의 세계', 'The Realms': '왕국들', 'The Sagas': '전설',
+  'Objectives': '목표', '(optional)': '(선택)',
+  'Resources gathered': '채집한 자원', 'Units trained': '훈련한 유닛', 'Units lost': '잃은 유닛', 'Enemies killed': '처치한 적',
+  'Treasures / beasts slain': '보물 / 처치한 괴수', 'Buildings destroyed': '파괴한 건물', 'Buildings lost': '잃은 건물', 'Age reached': '도달한 시대', 'Game time': '게임 시간',
+  'Settlement': '정착', 'Feudal': '봉건', 'Iron': '철기',
+  // ---- guide (tutorial) ----
+  'Hide tips (turn back on in Settings)': '도움말 숨기기 (설정에서 다시 켤 수 있음)',
+  '<b>Train villagers.</b> Click your Town Center (the big hall), then click the villager button or press <b>R</b>. Villagers are your workers.': '<b>주민을 훈련하세요.</b> 마을 회관(큰 건물)을 클릭한 뒤 주민 버튼을 누르거나 <b>R</b> 키를 누르세요. 주민은 일꾼입니다.',
+  '<b>Gather.</b> With AUTO-WORK on, villagers find work themselves. You can also select one and <b>right-click</b> a tree, berry bush, animal or gold rock.': '<b>채집하세요.</b> 자동 작업을 켜 두면 주민이 알아서 일을 찾습니다. 주민을 선택해 나무, 딸기 덤불, 동물, 금광을 <b>오른쪽 클릭</b>해도 됩니다.',
+  '<b>Build a House.</b> Select a villager and press <b>R</b>, then click the ground. Each house lets you have 5 more people.': '<b>주택을 지으세요.</b> 주민을 선택하고 <b>R</b> 키를 누른 뒤 땅을 클릭하세요. 주택 하나마다 인구를 5명 더 늘릴 수 있습니다.',
+  '<b>Build a Lumber Camp (T)</b> near trees and a <b>Mill (U)</b> near berries. You need two such buildings to reach the next age.': '나무 근처에 <b>벌목 캠프(T)</b>를, 딸기 근처에 <b>방앗간(U)</b>을 지으세요. 다음 시대로 가려면 이런 건물이 2개 필요합니다.',
+  '<b>Advance to the Feudal Age.</b> Save 400 food, select the Town Center and press <b>H</b>. This unlocks soldiers.': '<b>봉건 시대로 발전하세요.</b> 식량 400을 모은 뒤 마을 회관을 선택하고 <b>H</b> 키를 누르세요. 병사를 훈련할 수 있게 됩니다.',
+  '<b>Raise an army.</b> Have a villager build a <b>Barracks (F)</b>, then train soldiers there. Spearmen beat cavalry, archers beat infantry, cavalry beats archers.': '<b>군대를 키우세요.</b> 주민에게 <b>병영(F)</b>을 짓게 한 뒤 그곳에서 병사를 훈련하세요. 창병은 기병을, 궁수는 보병을, 기병은 궁수를 이깁니다.',
+  '<b>Attack!</b> Press the red <b>⚔ ATTACK</b> button (top right) to send every idle soldier at the enemy. Destroy all their buildings to win.': '<b>공격!</b> 오른쪽 위의 붉은 <b>⚔ 공격</b> 버튼을 누르면 놀고 있는 모든 병사가 적에게 향합니다. 적의 건물을 모두 파괴하면 승리합니다.',
+  '<b>Well done!</b> Tips: upgrade buildings for more HP, train Herbalists to heal, and clear wild camps for treasure. Press ✕ to close.': '<b>훌륭합니다!</b> 도움말: 건물을 업그레이드하면 체력이 늘고, 약초사를 훈련하면 치료할 수 있으며, 야생 진지를 소탕하면 보물을 얻습니다. ✕를 눌러 닫으세요.',
+  // ---- errors / end reasons (06_entities, 11_main) ----
+  'Only one Wonder allowed': '불가사의는 하나만 지을 수 있습니다', 'Building not finished': '건물이 아직 완성되지 않았습니다',
+  'Not available to your realm': '내 왕국에서는 쓸 수 없습니다', 'Queue is full': '대기열이 가득 찼습니다',
+  'Already researched': '이미 연구했습니다', 'Already researching': '이미 연구 중입니다', 'Already advanced': '이미 발전했습니다', 'Already advancing': '이미 발전 중입니다',
+  'Cannot be upgraded': '업그레이드할 수 없습니다', 'Fully upgraded': '최대 레벨입니다', 'Already upgrading': '이미 업그레이드 중입니다',
+  'Your Wonder stood for five minutes. Your realm is eternal.': '불가사의가 5분간 버텨 냈습니다. 당신의 왕국은 영원합니다.',
+  'The enemy Wonder stood for five minutes.': '적의 불가사의가 5분간 버텨 냈습니다.',
+  'Your realm has fallen.': '당신의 왕국이 무너졌습니다.', 'All your units and buildings have been destroyed.': '모든 유닛과 건물이 파괴되었습니다.',
+  // ---- objectives (tracker texts; the strings live in 13_content.js, translated here without touching it) ----
+  'Advance to the Feudal Age': '봉건 시대로 발전', 'Advance to the Iron Age': '철기 시대로 발전',
+  'Destroy the Crimson March': '크림슨 행군 격파', 'Defeat the Crimson March': '크림슨 행군 격파',
+  'Recover a treasure from the wolf dens': '늑대 굴에서 보물 되찾기', 'Take the hoard from the wolf dens': '늑대 굴에서 보물 빼앗기',
+  'Recover 2 pirate treasures': '해적 보물 2개 되찾기', 'Defeat Captain Redbeard': '붉은수염 선장 처치',
+  'Gather 1500 crystal-gold': '수정 금 1500 모으기', 'Gather 1500 gold': '금 1500 모으기',
+  'Slay the Tyrant': '폭군 처치', 'Destroy the Crimson March or win with a Wonder': '크림슨 행군을 격파하거나 불가사의로 승리',
+  'Cleanse 2 graveyards': '묘지 2곳 정화', 'Cleanse 2 graveyards of their treasure': '묘지 2곳의 보물 회수',
+  'Raise a war-band of 12 soldiers': '병사 12명으로 전투단 편성', 'Defeat the Stoneholt Clans': '스톤홀트 부족 격파',
+  'Plunder 2 corsair hoards': '해적 보물 더미 2곳 약탈', 'Defeat the Amber League': '앰버 연맹 격파',
+  'Field 3 siege engines': '공성 병기 3대 배치', 'Defeat the Azure Kingdom': '아즈르 왕국 격파',
+  'Recover a treasure': '보물 되찾기', 'Build 2 Watch Towers': '감시탑 2개 건설',
+  'Defeat the Windrider raiders': '윈드라이더 약탈대 격파', 'Reclaim the lost clan-hoard': '잃어버린 부족 보물 되찾기',
+  'Upgrade your Town Center to Level 3': '마을 회관을 3레벨로 업그레이드', 'Lay the Grave Knight to rest': '무덤 기사를 잠재우기',
+  'Defeat the Amber League or win with a Wonder': '앰버 연맹을 격파하거나 불가사의로 승리',
+});
+I18N.addAttr({ 'Select': '선택' });
+const _R2 = { food: '식량', wood: '목재', stone: '석재', gold: '금' };
+const _r2 = s => _R2[s.toLowerCase()] || s;
+const _WX = { clear: '맑음', rain: '비', storm: '폭풍', snow: '눈', fog: '안개', dynamic: '변화' };
+const _listT = (s, t) => s.split(', ').map(x => t(x)).join(', ');
+[
+  // composite texts (specific rules go first so they win over the generic ' · ' rule)
+  [/^(.+) — click to select$/, (m, t) => t(m[1]) + ' — 클릭하면 선택'],
+  [/^Guide · step (\d+) of (\d+)$/, m => '안내 · ' + m[1] + '/' + m[2] + '단계'],
+  [/^HP (\d+) · Atk (\d+) · Armor (\d+)\/(\d+)(?: · Range ([\d.]+))? · (\d+)s$/, m => '체력 ' + m[1] + ' · 공격 ' + m[2] + ' · 방어 ' + m[3] + '/' + m[4] + (m[5] ? ' · 사거리 ' + m[5] : '') + ' · ' + m[6] + '초'],
+  [/^Unique to the (.+)\.$/, (m, t) => t(m[1]) + ' 고유 건물.'],
+  [/^(\d+) \/ (\d+) HP$/, m => '체력 ' + m[1] + ' / ' + m[2]],
+  [/^(\d+) units$/, m => '유닛 ' + m[1] + '기'],
+  [/^(\d+) × (.+)$/, (m, t) => t(m[2]) + ' × ' + m[1]],
+  [/^Chapter (\d+): (.+)$/, (m, t) => '제 ' + m[1] + '장: ' + t(m[2])],
+  [/^Chapter (\d+) · (.+)$/, (m, t) => '제 ' + m[1] + '장 · ' + t(m[2])],
+  [/^(.+) · (\d+:\d+) played$/, (m, t) => t(m[1]) + ' · 플레이 ' + m[2]],
+  [/^Slot (\w+)$/, m => '슬롯 ' + m[1]],
+  [/^Continue · slot (\w+)$/, m => '이어하기 · 슬롯 ' + m[1]],
+  [/^Gathering (.+)$/, m => _r2(m[1]) + ' 채집 중'],
+  [/^Returning (.+)$/, m => _r2(m[1]) + ' 들고 복귀 중'],
+  [/^Building (.+)$/, (m, t) => t(m[1]) !== m[1] ? t(m[1]) + ' 건설 중' : null],
+  [/^Training (.+)$/, (m, t) => t(m[1]) !== m[1] ? t(m[1]) + ' 훈련 중' : null],
+  [/^Upgrading (.+)$/, (m, t) => t(m[1]) !== m[1] ? t(m[1]) + ' 업그레이드 중' : null],
+  [/^(Food|Wood|Stone|Gold) left$/i, m => '남은 ' + _r2(m[1])],
+  [/^(food|wood|stone|gold)(?:, (?:food|wood|stone|gold))+$/i, m => m[0].split(', ').map(_r2).join(', ')],
+  [/^(\d+) (food|wood|stone|gold)$/i, m => _r2(m[2]) + ' ' + m[1]],
+  [/^(Food|Wood|Stone|Gold): (\d+) villagers gathering, \+(-?\d+) per minute$/, m => _r2(m[1]) + ': 주민 ' + m[2] + '명 채집 중, 분당 +' + m[3]],
+  [/^☼ (.+)$/, (m, t) => '☼ ' + t(m[1])],
+  [/^Weather: (?:Auto \((\w+)\)|(\w+))$/, m => '날씨: ' + (m[1] ? '자동 (' + (_WX[m[1]] || m[1]) + ')' : (_WX[m[2]] || m[2]))],
+  [/^(Bonus objective|Objective) complete: (.+?) \(\+(\d+) food, \+(\d+) (gold|wood)\)$/, (m, t) => (m[1] === 'Objective' ? '목표 달성: ' : '보너스 목표 달성: ') + t(m[2]) + ' (식량 +' + m[3] + ', ' + _r2(m[5]) + ' +' + m[4] + ')'],
+  [/^\+25% HP, \+1 armor, \+20% production speed(, \+1 arrow and range)?(, \+2 population)?\. Level (\d) needs the (.+)\.$/, (m, t) => '체력 +25%, 방어 +1, 생산 속도 +20%' + (m[1] ? ', 화살 +1 및 사거리 +1' : '') + (m[2] ? ', 인구 +2' : '') + '. ' + m[3] + '레벨은 ' + t(m[4]) + '가 필요합니다.'],
+  [/^▲ Strong vs (.+)$/, (m, t) => '▲ 강함: ' + _listT(m[1], t)],
+  [/^▼ Weak vs (.+)$/, (m, t) => '▼ 약함: ' + _listT(m[1], t)],
+  [/^→ (.+)$/, (m, t) => '→ ' + t(m[1])],
+  [/^(.+?) — (\d+ \w+(?:, \d+ \w+)*)(?: — (trained at|at) (.+))?$/, (m, t) => t(m[1]) + ' — ' + m[2].split(', ').map(c => t(c)).join(', ') + (m[3] ? ' — ' + t(m[4]) + (m[3] === 'at' ? '에서 연구' : '에서 훈련') : '')],
+  [/^Select group (\d+) \(press (\d+)\)$/, m => m[1] + '번 부대 선택 (' + m[2] + ' 키)'],
+  [/^Send one more villager to gather (\w+)$/, m => '주민 한 명을 더 보내 ' + _r2(m[1]) + ' 채집'],
+  // messages
+  [/^You surrendered to the (.+)\.$/, (m, t) => t(m[1]) + '에게 항복했습니다.'],
+  [/^The (.+) has fallen back — its last strongholds are revealed on the map!$/, (m, t) => t(m[1]) + '이(가) 후퇴했습니다 — 마지막 거점이 지도에 드러났습니다!'],
+  [/^With no Town Center and no army left, the (.+) surrenders\.$/, (m, t) => '마을 회관도 군대도 남지 않은 ' + t(m[1]) + '이(가) 항복합니다.'],
+  [/^Preparing (.+)…$/, (m, t) => t(m[1]) + ' 준비 중…'],
+  [/^You slew (.+)!$/, (m, t) => t(m[1]) + ' 처치!'],
+  [/^(.+) slew (.+)!$/, (m, t) => t(m[1]) + '이(가) ' + t(m[2]) + '을(를) 처치했습니다!'],
+  [/^(.+) attacks!$/, (m, t) => t(m[1]) + '이(가) 공격해 옵니다!'],
+  [/^Only the (.+) can build this$/, (m, t) => t(m[1]) + '만 지을 수 있습니다'],
+  [/^Limit reached: (\d+) (.+?)s?$/, (m, t) => '건설 한도 도달: ' + t(m[2]) + ' ' + m[1] + '개'],
+  [/^(.+) completed a Wonder! 5 minutes until victory\.$/, (m, t) => t(m[1]) + '이(가) 불가사의를 완공했습니다! 승리까지 5분.'],
+  [/^Requires 2 different (.+) buildings$/, (m, t) => t(m[1]) + ' 건물 2종이 필요합니다'],
+].reverse().forEach(([re, fn]) => I18N.rule(re, fn, true)); // reversed: unshift keeps this list's order, ahead of the I1 rules
 
 // ---- 01_core.js ----
 'use strict';
@@ -5596,7 +5762,7 @@ const UI = (() => {
     const info = $('info'), img = $('portImg');
     if (!s.length) {
       const sig = 'none' + players[HUMAN].age;
-      if (sig !== infoSig) { infoSig = sig; img.src = View.ICONS.b_towncenter || ''; info.innerHTML = `<div class="nm">${players[HUMAN].name}</div><div class="sub">${AGE_NAMES[players[HUMAN].age]}</div><div class="sub" style="margin-top:6px">Select a unit or building. Right click to command.<br>Press <b>.</b> for idle villagers, <b>,</b> for your army.</div>`; }
+      if (sig !== infoSig) { infoSig = sig; img.src = View.ICONS.b_towncenter || ''; info.innerHTML = `<div class="nm">${players[HUMAN].name}</div><div class="sub">${AGE_NAMES[players[HUMAN].age]}</div><div class="sub" style="margin-top:6px">${I18N.t('Select a unit or building. Right click to command.<br>Press <b>.</b> for idle villagers, <b>,</b> for your army.')}</div>`; }
       return;
     }
     if (s.length > 1 && s.every(e => e.kind === 'unit')) {
@@ -5884,7 +6050,7 @@ const Menus = (() => {
     const sum = p => Math.floor(RESN.reduce((a, r) => a + p.stats.gathered[r], 0));
     const row = (label, f) => `<tr><td>${label}</td><td>${f(p0)}</td><td>${f(p1)}</td></tr>`;
     $('endStats').innerHTML = `<tr><th></th><th style="color:${TEAM_CSS[0]}">${p0.name}</th><th style="color:${TEAM_CSS[1]}">${p1.name}</th></tr>` +
-      row('Resources gathered', sum) + RESN.map(r => row('&nbsp;&nbsp;' + r[0].toUpperCase() + r.slice(1), p => Math.floor(p.stats.gathered[r]))).join('') +
+      row('Resources gathered', sum) + RESN.map(r => row('&nbsp;&nbsp;' + I18N.t(r), p => Math.floor(p.stats.gathered[r]))).join('') +
       row('Units trained', p => p.stats.trained) + row('Units lost', p => p.stats.lost) + row('Enemies killed', p => p.stats.kills) +
       row('Treasures / beasts slain', p => (p.stats.treasures || 0) + ' / ' + (p.stats.bosses || 0)) +
       row('Buildings destroyed', p => p.stats.bldDestroyed) + row('Buildings lost', p => p.stats.bldLost) + row('Age reached', p => AGE_NAMES[p.age].replace(' Age', '')) +
@@ -6946,7 +7112,7 @@ const Tips = (() => {
     const el = $('tips');
     if (!active || i >= STEPS.length) { el.classList.add('hidden'); return; }
     el.classList.remove('hidden');
-    el.innerHTML = `<div class="th"><span>Guide · step ${i + 1} of ${STEPS.length}</span><button id="tipX" title="Hide tips (turn back on in Settings)">✕</button></div><div class="tt2">${STEPS[i].text}</div>`;
+    el.innerHTML = `<div class="th"><span>Guide · step ${i + 1} of ${STEPS.length}</span><button id="tipX" title="Hide tips (turn back on in Settings)">✕</button></div><div class="tt2">${I18N.t(STEPS[i].text)}</div>`;
     $('tipX').onclick = () => { Settings.tips = false; saveSettings(); active = false; render(); };
   }
   function begin() { i = 0; t = 2; active = Settings.tips !== false && !players[HUMAN].isAI; while (active && i < STEPS.length - 1 && STEPS[i].done()) i++; render(); }
@@ -7220,7 +7386,7 @@ const UI2 = (() => {
     const plot = (x0, w, keys, title) => {
       const max = Math.max(1, ...timeline.map(r => Math.max(r[keys[0]], r[keys[1]])));
       g.fillStyle = 'rgba(0,0,0,.25)'; g.fillRect(x0, 18, w, Hh - 34); g.strokeStyle = 'rgba(240,212,138,.35)'; g.strokeRect(x0 + .5, 18.5, w - 1, Hh - 35);
-      g.fillStyle = '#f0d48a'; g.font = 'bold 11px Georgia'; g.fillText(title + ' (max ' + Math.round(max) + ')', x0 + 2, 12);
+      g.fillStyle = '#f0d48a'; g.font = 'bold 11px Georgia'; g.fillText(I18N.t(title) + ' (' + (I18N.lang === 'ko' ? '최대 ' : 'max ') + Math.round(max) + ')', x0 + 2, 12);
       keys.forEach((k, i) => { g.beginPath(); timeline.forEach((r, n) => { const x = x0 + 4 + (r.t / tMax) * (w - 8), y = Hh - 20 - (r[k] / max) * (Hh - 44); n ? g.lineTo(x, y) : g.moveTo(x, y); }); g.strokeStyle = TEAM_CSS[i]; g.lineWidth = 2; g.stroke(); });
       g.fillStyle = '#9b9586'; g.font = '10px sans-serif'; g.fillText('0:00', x0 + 2, Hh - 4); g.fillText(fmtTime(tMax), x0 + w - 30, Hh - 4);
     };

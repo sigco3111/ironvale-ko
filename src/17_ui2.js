@@ -132,7 +132,7 @@ const UI2 = (() => {
     const plot = (x0, w, keys, title) => {
       const max = Math.max(1, ...timeline.map(r => Math.max(r[keys[0]], r[keys[1]])));
       g.fillStyle = 'rgba(0,0,0,.25)'; g.fillRect(x0, 18, w, Hh - 34); g.strokeStyle = 'rgba(240,212,138,.35)'; g.strokeRect(x0 + .5, 18.5, w - 1, Hh - 35);
-      g.fillStyle = '#f0d48a'; g.font = 'bold 11px Georgia'; g.fillText(title + ' (max ' + Math.round(max) + ')', x0 + 2, 12);
+      g.fillStyle = '#f0d48a'; g.font = 'bold 11px Georgia'; g.fillText(I18N.t(title) + ' (' + (I18N.lang === 'ko' ? '최대 ' : 'max ') + Math.round(max) + ')', x0 + 2, 12);
       keys.forEach((k, i) => { g.beginPath(); timeline.forEach((r, n) => { const x = x0 + 4 + (r.t / tMax) * (w - 8), y = Hh - 20 - (r[k] / max) * (Hh - 44); n ? g.lineTo(x, y) : g.moveTo(x, y); }); g.strokeStyle = TEAM_CSS[i]; g.lineWidth = 2; g.stroke(); });
       g.fillStyle = '#9b9586'; g.font = '10px sans-serif'; g.fillText('0:00', x0 + 2, Hh - 4); g.fillText(fmtTime(tMax), x0 + w - 30, Hh - 4);
     };

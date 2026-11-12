@@ -265,7 +265,7 @@ const UI = (() => {
     const info = $('info'), img = $('portImg');
     if (!s.length) {
       const sig = 'none' + players[HUMAN].age;
-      if (sig !== infoSig) { infoSig = sig; img.src = View.ICONS.b_towncenter || ''; info.innerHTML = `<div class="nm">${players[HUMAN].name}</div><div class="sub">${AGE_NAMES[players[HUMAN].age]}</div><div class="sub" style="margin-top:6px">Select a unit or building. Right click to command.<br>Press <b>.</b> for idle villagers, <b>,</b> for your army.</div>`; }
+      if (sig !== infoSig) { infoSig = sig; img.src = View.ICONS.b_towncenter || ''; info.innerHTML = `<div class="nm">${players[HUMAN].name}</div><div class="sub">${AGE_NAMES[players[HUMAN].age]}</div><div class="sub" style="margin-top:6px">${I18N.t('Select a unit or building. Right click to command.<br>Press <b>.</b> for idle villagers, <b>,</b> for your army.')}</div>`; }
       return;
     }
     if (s.length > 1 && s.every(e => e.kind === 'unit')) {
@@ -553,7 +553,7 @@ const Menus = (() => {
     const sum = p => Math.floor(RESN.reduce((a, r) => a + p.stats.gathered[r], 0));
     const row = (label, f) => `<tr><td>${label}</td><td>${f(p0)}</td><td>${f(p1)}</td></tr>`;
     $('endStats').innerHTML = `<tr><th></th><th style="color:${TEAM_CSS[0]}">${p0.name}</th><th style="color:${TEAM_CSS[1]}">${p1.name}</th></tr>` +
-      row('Resources gathered', sum) + RESN.map(r => row('&nbsp;&nbsp;' + r[0].toUpperCase() + r.slice(1), p => Math.floor(p.stats.gathered[r]))).join('') +
+      row('Resources gathered', sum) + RESN.map(r => row('&nbsp;&nbsp;' + I18N.t(r), p => Math.floor(p.stats.gathered[r]))).join('') +
       row('Units trained', p => p.stats.trained) + row('Units lost', p => p.stats.lost) + row('Enemies killed', p => p.stats.kills) +
       row('Treasures / beasts slain', p => (p.stats.treasures || 0) + ' / ' + (p.stats.bosses || 0)) +
       row('Buildings destroyed', p => p.stats.bldDestroyed) + row('Buildings lost', p => p.stats.bldLost) + row('Age reached', p => AGE_NAMES[p.age].replace(' Age', '')) +

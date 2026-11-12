@@ -83,6 +83,6 @@ const I18N = (() => {
     sync(); observe();
     if (lang === 'ko') walk(document.body);
   }
-  return { t: tr, set, get lang() { return lang; }, add(d) { Object.assign(ko, d); }, addAttr(d) { Object.assign(koAttr, d); }, rule(re, fn) { rules.push([re, fn]); }, start };
+  return { t: tr, set, get lang() { return lang; }, add(d) { Object.assign(ko, d); }, addAttr(d) { Object.assign(koAttr, d); }, rule(re, fn, first) { if (first) rules.unshift([re, fn]); else rules.push([re, fn]); }, start };
 })();
 function t(s) { return I18N.t(s); }

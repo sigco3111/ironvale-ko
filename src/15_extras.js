@@ -133,7 +133,7 @@ const Tips = (() => {
     const el = $('tips');
     if (!active || i >= STEPS.length) { el.classList.add('hidden'); return; }
     el.classList.remove('hidden');
-    el.innerHTML = `<div class="th"><span>Guide · step ${i + 1} of ${STEPS.length}</span><button id="tipX" title="Hide tips (turn back on in Settings)">✕</button></div><div class="tt2">${STEPS[i].text}</div>`;
+    el.innerHTML = `<div class="th"><span>Guide · step ${i + 1} of ${STEPS.length}</span><button id="tipX" title="Hide tips (turn back on in Settings)">✕</button></div><div class="tt2">${I18N.t(STEPS[i].text)}</div>`;
     $('tipX').onclick = () => { Settings.tips = false; saveSettings(); active = false; render(); };
   }
   function begin() { i = 0; t = 2; active = Settings.tips !== false && !players[HUMAN].isAI; while (active && i < STEPS.length - 1 && STEPS[i].done()) i++; render(); }

@@ -7365,7 +7365,7 @@ const UI2 = (() => {
   function renderVil(force) {
     const p = $('vilPop'); if (p.classList.contains('hidden') && !force) return;
     const vs = myVils(), cnt = {}; for (const v of vs) cnt[taskOf(v)] = (cnt[taskOf(v)] || 0) + 1;
-    p.innerHTML = '<div class="ph">Villagers · ' + vs.length + '<button id="vilX">✕</button></div>' + TASKS.map(([k, n]) => `<div class="vr"><span class="vn">${RESN.includes(k) ? `<i style="background-image:url(${resIcon(k)})"></i>` : ''}${n}</span><b>${cnt[k] || 0}</b><button data-sel="${k}" title="Select these villagers">Select</button>${RESN.includes(k) ? `<button data-add="${k}" title="Send one more villager to gather ${n.toLowerCase()}">+1</button>` : '<span class="sp"></span>'}</div>`).join('');
+    p.innerHTML = '<div class="ph">Villagers · ' + vs.length + '<button id="vilX">✕</button></div>' + TASKS.map(([k, n]) => `<div class="vr"><span class="vn">${RESN.includes(k) ? `<i style="background-image:url(${resIcon(k)})"></i>` : ''}${RESN.includes(k) ? I18N.t(k) : n}</span><b>${cnt[k] || 0}</b><button data-sel="${k}" title="Select these villagers">Select</button>${RESN.includes(k) ? `<button data-add="${k}" title="Send one more villager to gather ${n.toLowerCase()}">+1</button>` : '<span class="sp"></span>'}</div>`).join('');
     $('vilX').onclick = () => p.classList.add('hidden');
     p.querySelectorAll('[data-sel]').forEach(e => e.onclick = () => { const l = myVils().filter(v => taskOf(v) === e.dataset.sel); if (l.length) { Input.setSelection(l); Input.centerSel(); } });
     p.querySelectorAll('[data-add]').forEach(e => e.onclick = () => assign(e.dataset.add));

@@ -5,6 +5,28 @@
 - 플레이: https://sigco3111.github.io/ironvale-ko/
 - 원작 플레이: https://sharpwizard.github.io/ironvale/
 
+## 스크린샷
+
+실제 라이브 사이트(https://sigco3111.github.io/ironvale-ko/)에서 캡처한 화면입니다.
+
+![메인 메뉴](docs/screenshots/01-menu.webp)
+*메인 메뉴 — 캠페인 3개 탭과 제1장 '푸른 계곡' 등 장 목록, 하단의 연대기·설정·조작법·English 버튼.*
+
+![캠페인 선택](docs/screenshots/02-campaign.webp)
+*캠페인 선택 — '긴 바람의 기수들'을 고른 화면(제1장 부족의 집결, 제2장 앰버 가도, 제3장 아즈르의 성벽).*
+
+![제1장 브리핑](docs/screenshots/03-briefing.webp)
+*제1장 '푸른 계곡' 브리핑 — 장 소개글과 목표, 시작 버튼.*
+
+![마을 게임 화면](docs/screenshots/04-village.webp)
+*게임 화면 — 상단 자원 막대와 시계, 좌측 목표 창, 하단 정보 패널과 명령 버튼, 우측 카메라 패널과 미니맵.*
+
+![정보 패널과 설명](docs/screenshots/05-info.webp)
+*마을 회관을 선택한 정보 패널과 '주민 훈련' 버튼의 한국어 설명 툴팁.*
+
+![조작법 화면](docs/screenshots/06-controls.webp)
+*조작법 화면 — 3D 모델 크레딧(CC-BY 3.0 포함)과 상단 바·저장 설명.*
+
 ## 안내 (NOTICE)
 
 - 원작: **Ironvale** — 제작자 **SharpWizard** (Claude Fable 5.2로 제작) — https://github.com/SharpWizard/ironvale

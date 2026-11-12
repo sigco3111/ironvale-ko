@@ -9,7 +9,7 @@
 <style>
 :root{--panel:rgba(13,15,21,.86);--panel2:rgba(26,29,38,.92);--line:rgba(217,164,65,.32);--gold:#d9a441;--gold2:#f3c969;--text:#ebe6da;--dim:#9b9586;--red:#ec5a4a;--green:#72d36c;--btn:58px}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);user-select:none;-webkit-user-select:none;touch-action:none;-webkit-tap-highlight-color:transparent;font-size:14px}
+html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--text);user-select:none;-webkit-user-select:none;touch-action:none;-webkit-tap-highlight-color:transparent;font-size:14px}
 #c{position:fixed;inset:0;width:100%;height:100%;display:block;outline:none}
 .hidden{display:none!important}
 button{font:inherit;color:inherit;cursor:pointer}
@@ -100,7 +100,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .note.story{color:#f6e7c1;border-color:var(--gold);background:rgba(28,22,10,.92);max-width:640px;text-align:center;font-style:italic}
 #story .card{width:min(620px,100%)}
 #storyKicker{color:var(--dim);letter-spacing:.2em;text-transform:uppercase;font-size:11px;font-weight:700}
-#storyTitle{font-family:Georgia,serif;color:var(--gold2);font-size:34px;margin:4px 0 10px}
+#storyTitle{font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:var(--gold2);font-size:34px;margin:4px 0 10px}
 #storyText p{line-height:1.55;color:#e6dcc4;margin:0 0 10px;font-size:14px}
 .sobj{margin-top:10px;padding-top:8px;border-top:1px solid var(--line);font-size:13px;color:#d8d1c0}
 .sobj b{color:var(--gold2);display:block;margin-bottom:4px}
@@ -128,7 +128,7 @@ body.touch #touchbar{display:flex}
 .screen{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:16px}
 #menu{background:radial-gradient(ellipse at center,rgba(0,0,0,.05) 0%,rgba(0,0,0,.55) 70%,rgba(0,0,0,.8) 100%);flex-direction:column;gap:18px;overflow:auto}
 .logo{text-align:center}
-.logo h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,10vw,96px);letter-spacing:.16em;color:var(--gold2);text-shadow:0 2px 0 #6b4a18,0 6px 30px rgba(0,0,0,.8),0 0 40px rgba(217,164,65,.35);font-weight:700;padding-left:.16em}
+.logo h1{margin:0;font-family:Georgia,"Times New Roman","Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;font-size:clamp(46px,10vw,96px);letter-spacing:.16em;color:var(--gold2);text-shadow:0 2px 0 #6b4a18,0 6px 30px rgba(0,0,0,.8),0 0 40px rgba(217,164,65,.35);font-weight:700;padding-left:.16em}
 .logo p{margin:4px 0 0;color:#e6dcc4;letter-spacing:.3em;text-transform:uppercase;font-size:clamp(10px,2.2vw,14px);text-shadow:0 2px 8px #000}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;width:min(440px,100%);box-shadow:0 10px 40px rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 .card h2{margin:0 0 12px;color:var(--gold2);font-size:18px;letter-spacing:.06em;font-weight:700}
@@ -155,14 +155,14 @@ input[type=range]{accent-color:var(--gold);width:170px}
 .ctable tr.h td{color:var(--dim);text-transform:uppercase;font-size:11px;letter-spacing:.1em;padding-top:12px;border-bottom:1px solid var(--line)}
 .scroll{max-height:min(68vh,560px);overflow:auto;padding-right:4px}
 #overlayDim{background:rgba(0,0,0,.55)}
-.end h1{font-family:Georgia,serif;font-size:48px;margin:0 0 6px;letter-spacing:.1em;text-align:center}
+.end h1{font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;font-size:48px;margin:0 0 6px;letter-spacing:.1em;text-align:center}
 .end h1.win{color:var(--gold2)}.end h1.lose{color:var(--red)}
 .st{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
 .st th,.st td{padding:5px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,.07)}
 .st th:first-child,.st td:first-child{text-align:left;color:#cfc9bb}
 .st th{color:var(--gold2)}
 .hint{color:var(--dim);font-size:12px;text-align:center;margin-top:6px}
-#loading{position:fixed;inset:0;background:#0b0c10;display:flex;align-items:center;justify-content:center;z-index:50;color:var(--gold2);font-family:Georgia,serif;letter-spacing:.3em;font-size:20px}
+#loading{position:fixed;inset:0;background:#0b0c10;display:flex;align-items:center;justify-content:center;z-index:50;color:var(--gold2);font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;letter-spacing:.3em;font-size:20px}
 /* ---------- responsive ---------- */
 @media (max-width:900px),(max-height:560px){
   #viewctl{bottom:124px;grid-template-columns:repeat(3,28px)}#viewctl button{width:28px;height:26px;font-size:11px}
@@ -196,10 +196,10 @@ input[type=range]{accent-color:var(--gold);width:170px}
 #bottom{border-top:2px solid #8a6a2f}
 .res{background:linear-gradient(180deg,#17100a,#2b2016);border:1px solid #6b5326;box-shadow:inset 0 1px 3px rgba(0,0,0,.85),0 1px 0 rgba(255,220,150,.12);border-radius:14px}
 .res b{color:#f6ead0;text-shadow:0 1px 1px #000}
-#topmid{font-family:Georgia,"Times New Roman",serif;text-shadow:0 1px 2px #000;font-size:15px}
+#topmid{font-family:Georgia,"Times New Roman","Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;text-shadow:0 1px 2px #000;font-size:15px}
 #selpanel{background:linear-gradient(180deg,rgba(233,220,192,.11),rgba(233,220,192,.04));border:1px solid #6b5326;box-shadow:inset 0 0 20px rgba(0,0,0,.55)}
 #portrait{border:2px solid #c9a24a;box-shadow:0 0 0 2px #1a120a,inset 0 0 16px rgba(0,0,0,.7);background:radial-gradient(circle at 50% 30%,#7a8ba0,#1b222c)}
-#info .nm{font-family:Georgia,serif;letter-spacing:.03em;text-shadow:0 1px 2px #000;font-size:17px}
+#info .nm{font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;letter-spacing:.03em;text-shadow:0 1px 2px #000;font-size:17px}
 .hpb{height:10px;border:1px solid #0d0806;background:#1a0f0a;box-shadow:inset 0 1px 2px #000}
 .hpb>div{background-image:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,0) 50%,rgba(0,0,0,.25))}
 .cb{border:1px solid #7a5f2a;background-color:#2a2118;box-shadow:inset 0 1px 0 rgba(255,225,160,.25),inset 0 -3px 6px rgba(0,0,0,.6),0 2px 3px rgba(0,0,0,.6);border-radius:6px;transition:transform .06s,box-shadow .12s}
@@ -208,29 +208,29 @@ input[type=range]{accent-color:var(--gold);width:170px}
 .qi,.mi{border-color:#7a5f2a;box-shadow:inset 0 0 6px rgba(0,0,0,.6)}
 #mmwrap{border:2px solid #c9a24a;box-shadow:0 0 0 2px #1a120a,0 4px 12px rgba(0,0,0,.7);border-radius:6px}
 .tbtn{background:linear-gradient(180deg,#5a4228,#33241a);border:1px solid #8a6a2f;box-shadow:inset 0 1px 0 rgba(255,225,160,.25),0 1px 2px #000;color:#f3e2b8}
-.note{background:linear-gradient(180deg,#f2e7cb,#d9c79c);color:#2a1c10;border:1px solid #8a6a2f;text-shadow:none;box-shadow:0 3px 10px rgba(0,0,0,.5);font-family:Georgia,serif}
+.note{background:linear-gradient(180deg,#f2e7cb,#d9c79c);color:#2a1c10;border:1px solid #8a6a2f;text-shadow:none;box-shadow:0 3px 10px rgba(0,0,0,.5);font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif}
 .note.warn{color:#8a1410;border-color:#a33}.note.good{color:#3d4a12}
 .note.story{background:linear-gradient(180deg,#f2e7cb,#d9c79c);color:#2a1c10}
 #tooltip{background:linear-gradient(180deg,#f3e8cd,#dccba2);color:#2a1c10;border:1px solid #6b5326;box-shadow:0 6px 20px rgba(0,0,0,.6)}
-#tooltip .tt{color:#5a2c0c;font-family:Georgia,serif}#tooltip .td{color:#3a2a1a}#tooltip .tk{color:#7a6a4a}#tooltip .tc .bad,#tooltip .tr{color:#b0241a}
+#tooltip .tt{color:#5a2c0c;font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif}#tooltip .td{color:#3a2a1a}#tooltip .tk{color:#7a6a4a}#tooltip .tc .bad,#tooltip .tr{color:#b0241a}
 .card{background:linear-gradient(180deg,rgba(60,44,29,.97),rgba(28,19,12,.98));border:2px solid #8a6a2f;box-shadow:0 0 0 1px #120b06,0 14px 50px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,220,150,.15)}
 #objectives{background:linear-gradient(180deg,#f2e7cb,#d9c79c);border:1px solid #8a6a2f;color:#2a1c10;box-shadow:0 3px 10px rgba(0,0,0,.5)}
-#objectives .oh{color:#5a2c0c;font-family:Georgia,serif}#objectives .oi{color:#2a1c10}#objectives .oi.ok{color:#3d6a12}#objectives .oi.opt{color:#5a4a3a}
-.ft{font-family:Georgia,serif;font-size:15px}
+#objectives .oh{color:#5a2c0c;font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif}#objectives .oi{color:#2a1c10}#objectives .oi.ok{color:#3d6a12}#objectives .oi.opt{color:#5a4a3a}
+.ft{font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;font-size:15px}
 #tips{position:fixed;left:8px;bottom:196px;z-index:5;width:min(330px,calc(100vw - 190px));background:linear-gradient(180deg,#f2e7cb,#d9c79c);border:1px solid #8a6a2f;border-radius:8px;padding:7px 10px 9px;color:#2a1c10;font-size:13px;line-height:1.4;box-shadow:0 3px 10px rgba(0,0,0,.5)}
-#tips .th{display:flex;justify-content:space-between;align-items:center;font:700 10px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5a2a;margin-bottom:3px}
+#tips .th{display:flex;justify-content:space-between;align-items:center;font:700 10px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5a2a;margin-bottom:3px}
 #tips .th button{border:0;background:transparent;color:#7a5a2a;font-size:13px;padding:0 2px}
 #tips b{color:#5a2c0c}
 #btnContinue small{display:block;font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:none;opacity:.8;margin-top:2px}
 @media (max-width:900px),(max-height:560px){#tips{bottom:124px;font-size:12px}}
 #campSel{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
 #campSel button{padding:7px 6px;border-radius:8px;border:1px solid #8a6a2f;background:linear-gradient(180deg,#3a2a1c,#241810);color:#e0d3b0;text-align:left;line-height:1.2}
-#campSel button b{display:block;font:700 12px Georgia,serif;color:#f0d48a}#campSel button small{font-size:10px;color:var(--dim)}
+#campSel button b{display:block;font:700 12px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#f0d48a}#campSel button small{font-size:10px;color:var(--dim)}
 #campSel button.on{border-color:#f0d48a;box-shadow:0 0 10px rgba(240,200,110,.4),inset 0 1px 0 rgba(255,225,160,.25);background:linear-gradient(180deg,#5a4228,#33241a)}
 #campBlurb{font-size:12px;color:#d8d1c0;line-height:1.4;margin:0 2px 9px}#campBlurb b{color:#f0d48a}
 #realmDesc{font-size:11.5px;color:#cfc6b0;margin:-4px 0 6px;text-align:right}#realmDesc b{color:#f0d48a}#realmDesc ul{margin:2px 0 0;padding:0;list-style:none}#realmDesc li::before{content:"◆ ";color:#c9a24a}
-#chronBody h3{font:700 16px Georgia,serif;color:#f0d48a;margin:14px 0 6px;border-bottom:1px solid rgba(138,106,47,.6);padding-bottom:3px}#chronBody h3:first-child{margin-top:0}
-.cr{margin:0 0 10px}.cr h4{margin:0 0 2px;font:700 13px Georgia,serif;color:#e9dcc0}.cr h4 small{font-weight:400;font-style:italic;color:var(--dim);margin-left:6px}
+#chronBody h3{font:700 16px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#f0d48a;margin:14px 0 6px;border-bottom:1px solid rgba(138,106,47,.6);padding-bottom:3px}#chronBody h3:first-child{margin-top:0}
+.cr{margin:0 0 10px}.cr h4{margin:0 0 2px;font:700 13px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#e9dcc0}.cr h4 small{font-weight:400;font-style:italic;color:var(--dim);margin-left:6px}
 .cr p{margin:2px 0;font-size:13px;line-height:1.5;color:#d8d1c0}.cr p.lk{color:var(--dim)}.cr ul{margin:3px 0 0 16px;padding:0;font-size:12px;color:#9fd98a}
 .row.stack{flex-direction:column;align-items:stretch;gap:5px;margin:8px 0}
 .gridseg{display:grid}.gridseg.g5{grid-template-columns:repeat(5,1fr)}.gridseg.g6{grid-template-columns:repeat(6,1fr)}
@@ -247,7 +247,7 @@ input[type=range]{accent-color:var(--gold);width:170px}
 /* ---- UI extras ---- */
 .pop{position:fixed;z-index:9;background:linear-gradient(180deg,#f2e7cb,#d9c79c);border:1px solid #8a6a2f;border-radius:8px;color:#2a1c10;box-shadow:0 6px 20px rgba(0,0,0,.6);font-size:12.5px;animation:popIn .14s ease-out}
 @keyframes popIn{from{opacity:0;transform:translateY(-6px) scale(.98)}}
-.pop .ph{display:flex;justify-content:space-between;align-items:center;font:700 11px Georgia,serif;letter-spacing:.12em;text-transform:uppercase;color:#7a5a2a;padding:6px 10px;border-bottom:1px solid rgba(138,106,47,.5)}
+.pop .ph{display:flex;justify-content:space-between;align-items:center;font:700 11px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;letter-spacing:.12em;text-transform:uppercase;color:#7a5a2a;padding:6px 10px;border-bottom:1px solid rgba(138,106,47,.5)}
 .pop .ph button{border:0;background:transparent;color:#7a5a2a;font-size:13px}
 #logPanel{right:8px;top:50px;width:min(360px,92vw);max-height:46vh;overflow:auto}
 .le{padding:4px 10px;border-bottom:1px solid rgba(138,106,47,.18)}.le b{color:#7a5a2a;font-variant-numeric:tabular-nums;margin-right:4px}
@@ -263,7 +263,7 @@ body.touch #prodbar{right:70px}
 .pi .pp{position:absolute;left:2px;right:2px;bottom:2px;height:5px;background:#120b06;border-radius:2px;overflow:hidden}.pi .pp div{height:100%;background:linear-gradient(180deg,#f7e2a8,#c98f2f);transition:width .3s linear}
 #grpbar{position:fixed;left:50%;transform:translateX(-50%);bottom:192px;z-index:5;display:flex;gap:4px}
 #grpbar button{background:linear-gradient(180deg,#5a4228,#33241a);border:1px solid #8a6a2f;border-bottom:0;border-radius:6px 6px 0 0;color:#f3e2b8;font-size:11px;padding:2px 9px 3px}
-#grpbar button b{color:#f0d48a;margin-right:5px;font-family:Georgia,serif}
+#grpbar button b{color:#f0d48a;margin-right:5px;font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif}
 #portrait{position:relative}#portrait.live img{visibility:hidden}#portCanvas{position:absolute;inset:0;width:100%;height:100%}
 .ctr{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:11.5px;margin-top:1px}.ctr .good{color:#9fd98a}.ctr .bad{color:#ff9d90}
 .stats .up{color:#8fe07a;font-style:normal;font-weight:700;margin-left:2px}
@@ -273,13 +273,13 @@ body.touch #prodbar{right:70px}
 #mmwrap.big .mmbtns{left:auto;right:352px;top:auto;bottom:356px;flex-direction:column}
 #techBody{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .tcol{border:1px solid rgba(138,106,47,.5);border-radius:8px;padding:8px;background:rgba(0,0,0,.18)}.tcol.cur{border-color:#f0d48a;box-shadow:0 0 12px rgba(240,200,110,.25)}
-.tcol h3{margin:0 0 6px;font:700 15px Georgia,serif;color:#f0d48a}.tcol h3 small{font-size:11px;color:var(--dim)}.tcol h4{margin:8px 0 4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.tcol h3{margin:0 0 6px;font:700 15px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#f0d48a}.tcol h3 small{font-size:11px;color:var(--dim)}.tcol h4{margin:8px 0 4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:5px}
 .tn{position:relative;display:flex;align-items:center;gap:5px;padding:3px 5px;border-radius:6px;border:1px solid #6b5326;background:#2a2118;font-size:11px;line-height:1.15}
 .tn i{flex:0 0 28px;height:28px;background:center/contain no-repeat}.tn em{position:absolute;right:3px;top:1px;font-style:normal;font-size:10px}
 .tn.have{border-color:#6fae4a;background:#24301c}.tn.have em{color:#9fd98a}.tn.lock{opacity:.45;filter:grayscale(.8)}
 #hkGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-#hkGrid input{height:40px;text-align:center;font:700 17px Georgia,serif;color:#f0d48a;background:#17100a;border:1px solid #8a6a2f;border-radius:6px;text-transform:uppercase}
+#hkGrid input{height:40px;text-align:center;font:700 17px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#f0d48a;background:#17100a;border:1px solid #8a6a2f;border-radius:6px;text-transform:uppercase}
 #hkGrid input:focus{outline:2px solid #f0d48a}
 #endChart{margin:4px 0 8px}
 #btmToggle{display:none;position:fixed;left:6px;bottom:6px;z-index:7;width:34px;height:30px;border-radius:7px;border:1px solid #8a6a2f;background:linear-gradient(180deg,#5a4228,#33241a);color:#f0d48a;font-size:12px}
@@ -307,10 +307,10 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
 #selpanel::after,.card::after{right:3px;bottom:3px;border-left:0;border-top:0;border-radius:0 0 4px 0}
 #viewctl{position:fixed}
 .card h2,.end h1,#storyTitle{text-shadow:0 2px 0 #3a2408,0 4px 14px rgba(0,0,0,.6)}
-.big{position:relative;overflow:hidden;font-family:Georgia,serif;border:1px solid #f7e2a8;box-shadow:0 4px 16px rgba(217,164,65,.35),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -3px 6px rgba(120,70,10,.35)}
+.big{position:relative;overflow:hidden;font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;border:1px solid #f7e2a8;box-shadow:0 4px 16px rgba(217,164,65,.35),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -3px 6px rgba(120,70,10,.35)}
 .big::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 4.5s infinite}
 @keyframes shine{0%,70%{left:-60%}100%{left:130%}}
-.lbtn{background:linear-gradient(180deg,#5a4228,#33241a);border:1px solid #8a6a2f;color:#f3e2b8;box-shadow:inset 0 1px 0 rgba(255,225,160,.22),0 2px 4px rgba(0,0,0,.5);font-family:Georgia,serif}
+.lbtn{background:linear-gradient(180deg,#5a4228,#33241a);border:1px solid #8a6a2f;color:#f3e2b8;box-shadow:inset 0 1px 0 rgba(255,225,160,.22),0 2px 4px rgba(0,0,0,.5);font-family:Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif}
 .lbtn:hover{border-color:#f0d48a;color:#fff;filter:brightness(1.1)}
 .seg{border-color:#8a6a2f;background:#1c130c}.seg button{color:#e0d3b0}.seg button.on{background:linear-gradient(180deg,#f3c969,#c98f2f);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
 .logo h1{background:linear-gradient(180deg,#fff3c4 0%,#f3c969 45%,#b8771c 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 #4a2f0c) drop-shadow(0 8px 26px rgba(0,0,0,.85))}
@@ -320,7 +320,7 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
 @media (max-width:1100px){.tbtn.mini{display:none}#todInd{display:none}}
 /* ---- camera panel ---- */
 #viewctl{display:block;position:fixed;right:8px;bottom:196px;width:158px;z-index:6;padding:0;border-radius:10px;border:2px solid #8a6a2f;background:linear-gradient(180deg,#4d3826,#231710);box-shadow:0 4px 14px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,220,150,.2)}
-#viewctl .vhead{display:flex;justify-content:space-between;align-items:center;padding:3px 6px 3px 10px;font:700 10px Georgia,serif;letter-spacing:.2em;color:#f0d48a;border-bottom:1px solid rgba(138,106,47,.6)}
+#viewctl .vhead{display:flex;justify-content:space-between;align-items:center;padding:3px 6px 3px 10px;font:700 10px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;letter-spacing:.2em;color:#f0d48a;border-bottom:1px solid rgba(138,106,47,.6)}
 #viewctl .vhead button{width:20px;height:18px;font-size:12px;line-height:1}
 #viewctl .vbody{padding:6px;display:flex;flex-direction:column;gap:5px}
 #viewctl.min .vbody{display:none}#viewctl.min{width:104px}
@@ -336,7 +336,7 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
 #vdial.on{cursor:grabbing;box-shadow:0 0 0 2px #1a120a,0 0 12px rgba(240,200,110,.7),inset 0 2px 8px rgba(0,0,0,.45)}
 #vneedle{position:absolute;left:50%;top:50%;width:0;height:0;margin:-28px 0 0 -6px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:28px solid #b0241a;transform-origin:6px 28px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5))}
 #vneedle::after{content:"";position:absolute;left:-6px;top:28px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:28px solid #3a2a1c}
-#vdial .vn{position:absolute;top:1px;left:0;right:0;text-align:center;font:700 9px Georgia,serif;color:#5a2c0c;pointer-events:none}
+#vdial .vn{position:absolute;top:1px;left:0;right:0;text-align:center;font:700 9px Georgia,"Noto Serif KR","Nanum Myeongjo","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",serif;color:#5a2c0c;pointer-events:none}
 #vdial .vhint{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:8px;color:#5a4a3a;pointer-events:none;letter-spacing:.03em}
 @media (max-width:900px),(max-height:560px){#viewctl{bottom:124px;width:140px}#vdial{width:62px;height:62px}#vneedle{margin-top:-22px;border-bottom-width:22px;transform-origin:6px 22px}#vneedle::after{top:22px;border-top-width:22px}}
 /* ---- phones and small windows ---- */
@@ -357,6 +357,7 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
   #notes{top:74px}
   #viewctl{bottom:calc(var(--btn)*3 + 30px)}
 }
+html.ko #loading{letter-spacing:.1em}html.ko .tbtn,html.ko .lbtn,html.ko .seg button,html.ko .big{letter-spacing:0;word-break:keep-all}html.ko .row label{word-break:keep-all}html.ko .ctable td{word-break:keep-all;line-height:1.5}
 </style>
 </head>
 <body>
@@ -438,15 +439,16 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
       <div class="row"><label>Game speed</label><div class="seg" id="optSpeed"><button data-v="1">1x</button><button data-v="1.5">1.5x</button><button data-v="2">2x</button></div></div>
       <button class="big" id="btnStart">Start Skirmish</button>
     </div>
-    <div class="links"><button class="lbtn" id="btnChron">Chronicle</button><button class="lbtn" id="btnSettings">Settings</button><button class="lbtn" id="btnControls">Controls</button></div>
+    <div class="links"><button class="lbtn" id="btnChron">Chronicle</button><button class="lbtn" id="btnSettings">Settings</button><button class="lbtn" id="btnControls">Controls</button><button class="lbtn" id="btnLang">English</button></div>
   </div>
-  <div class="hint"><span style="font-size:11px;opacity:.75">3D models via poly.pizza: Quaternius, Kenney, Kay &amp; Isa Lousberg, iPoly3D, mastjie, Polygonal Mind (CC0) &middot; Poly by Google and others (CC-BY 3.0) &mdash; full list in Controls<br>Built entirely with Claude Fable 5.2 in Claude Code</span></div>
+  <div class="hint"><span style="font-size:11px;opacity:.75">3D models via poly.pizza: Quaternius, Kenney, Kay &amp; Isa Lousberg, iPoly3D, mastjie, Polygonal Mind (CC0) &middot; Poly by Google and others (CC-BY 3.0) &mdash; full list in Controls<br>Built entirely with Claude Fable 5.2 in Claude Code<br>Unofficial Korean localization of <a href="https://github.com/SharpWizard/ironvale" target="_blank" rel="noopener" style="color:inherit">SharpWizard/ironvale</a> &middot; original credit: SharpWizard &middot; <a href="https://github.com/sigco3111/ironvale-ko" target="_blank" rel="noopener" style="color:inherit">ironvale-ko</a></span></div>
 </div>
 
 <!-- settings -->
 <div id="settings" class="screen hidden" style="background:rgba(0,0,0,.6)">
   <div class="card">
     <h2>Settings</h2>
+    <div class="row"><label>Language</label><div class="seg" id="setLang"><button data-lang="ko">한국어</button><button data-lang="en">English</button></div></div>
     <div class="row"><label>Graphics quality</label><div class="seg" id="setQ"><button data-v="low">Low</button><button data-v="medium">Medium</button><button data-v="high">High</button></div></div>
     <div class="row"><label>Sound volume</label><input type="range" id="setVol" min="0" max="100"></div>
     <div class="row"><label>Music volume</label><input type="range" id="setMus" min="0" max="100"></div>
@@ -585,6 +587,276 @@ body.btmmin #selpanel,body.btmmin #cmds{display:none}body.btmmin #bottom{justify
 <script>function IV_PACK(n, m) { (window.__IVQ = window.__IVQ || []).push([n, m]); }</script>
 <script src="models/core.js"></script>
 <script>
+// ---- 00_i18n.js ----
+'use strict';
+// =====================================================================
+//  I18N — minimal Korean/English layer (unofficial localization)
+//  t(key): key is the original English text; ko dictionary maps it to Korean.
+//  Static HTML, tooltips and dynamic text are translated at the DOM level
+//  (text nodes + title/placeholder attributes); code strings stay English so
+//  game logic that compares strings keeps working.
+// =====================================================================
+const I18N = (() => {
+  const ko = Object.create(null), koAttr = Object.create(null), rules = [];
+  const KEY = 'ironvale.lang';
+  let lang = 'ko';
+  try { const v = localStorage.getItem(KEY); if (v === 'en' || v === 'ko') lang = v; } catch (e) { /* storage unavailable */ }
+  const norm = s => s.replace(/\s+/g, ' ').trim();
+  function tr(s, isAttr) {
+    if (lang !== 'ko' || !s) return s;
+    const k = norm(s);
+    if (isAttr && koAttr[k] !== undefined) return koAttr[k];
+    if (ko[k] !== undefined) return ko[k];
+    for (const [re, fn] of rules) { const m = re.exec(k); if (m) { const o = fn(m, tr); if (o != null) return o; } }
+    return s;
+  }
+  const orig = new WeakMap(), origAttr = new WeakMap();
+  const ATTRS = ['title', 'placeholder', 'aria-label'];
+  function txt(n) {
+    const v = n.nodeValue; if (!v || !/[A-Za-z]/.test(v)) return;
+    const o = orig.get(n); if (o && o.out === v) return;
+    const out = tr(v); if (out === v) return;
+    const lead = v.match(/^\s*/)[0], trail = v.match(/\s*$/)[0];
+    const nv = lead + out + trail; orig.set(n, { src: v, out: nv }); n.nodeValue = nv;
+  }
+  function attr(el, a) {
+    const v = el.getAttribute(a); if (!v || !/[A-Za-z]/.test(v)) return;
+    let m = origAttr.get(el); const o = m && m[a]; if (o && o.out === v) return;
+    const out = tr(v, true); if (out === v) return;
+    if (!m) origAttr.set(el, m = {}); m[a] = { src: v, out }; el.setAttribute(a, out);
+  }
+  function walk(root) {
+    if (root.nodeType === 3) return txt(root);
+    if (root.nodeType !== 1) return;
+    if (/^(SCRIPT|STYLE|CANVAS)$/.test(root.tagName)) return;
+    for (const a of ATTRS) if (root.hasAttribute(a)) attr(root, a);
+    for (let c = root.firstChild; c; c = c.nextSibling) walk(c);
+  }
+  function restore(root) {
+    if (root.nodeType === 3) { const o = orig.get(root); if (o && o.out === root.nodeValue) { root.nodeValue = o.src; orig.delete(root); } return; }
+    if (root.nodeType !== 1) return;
+    const m = origAttr.get(root);
+    if (m) for (const a in m) if (root.getAttribute(a) === m[a].out) root.setAttribute(a, m[a].src);
+    origAttr.delete(root);
+    for (let c = root.firstChild; c; c = c.nextSibling) restore(c);
+  }
+  let mo = null;
+  function observe() {
+    if (mo || typeof MutationObserver === 'undefined') return;
+    mo = new MutationObserver(recs => {
+      if (lang !== 'ko') return;
+      for (const r of recs) {
+        if (r.type === 'characterData') txt(r.target);
+        else if (r.type === 'attributes') attr(r.target, r.attributeName);
+        else for (const n of r.addedNodes) walk(n);
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
+  }
+  function sync() {
+    document.documentElement.lang = lang;
+    document.documentElement.classList.toggle('ko', lang === 'ko');
+    document.title = lang === 'ko' ? '아이언베일 (한글화)' : 'Ironvale';
+    document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('on', b.dataset.lang === lang));
+    const lb = document.getElementById('btnLang'); if (lb) lb.textContent = lang === 'ko' ? 'English' : '한국어';
+  }
+  function set(l) {
+    if (l !== 'ko' && l !== 'en') return;
+    lang = l; try { localStorage.setItem(KEY, l); } catch (e) { /* ignore */ }
+    if (l === 'ko') walk(document.body); else restore(document.body);
+    sync();
+  }
+  function start() {
+    // language buttons: main menu toggle + settings row
+    const lb = document.getElementById('btnLang'); if (lb) lb.onclick = () => set(lang === 'ko' ? 'en' : 'ko');
+    document.querySelectorAll('[data-lang]').forEach(b => { b.onclick = () => set(b.dataset.lang); });
+    sync(); observe();
+    if (lang === 'ko') walk(document.body);
+  }
+  return { t: tr, set, get lang() { return lang; }, add(d) { Object.assign(ko, d); }, addAttr(d) { Object.assign(koAttr, d); }, rule(re, fn) { rules.push([re, fn]); }, start };
+})();
+function t(s) { return I18N.t(s); }
+
+// ---- 00_i18n_ko.js ----
+// Korean dictionary (I1: menu, settings, HUD labels, command buttons, controls, notifications).
+// Keys = original English text (whitespace collapsed). Names: see NOTES.md glossary.
+I18N.add({
+  // ---- loading / logo / main menu ----
+  'IRONVALE · loading': '아이언베일 · 불러오는 중',
+  'Forge a realm · Hold the vale': '왕국을 일구고 · 계곡을 지켜라',
+  'Load game · choose a save slot': '불러오기 · 저장 슬롯 선택',
+  'Campaign': '캠페인', 'Skirmish': '스커미시', 'Difficulty': '난이도',
+  'Easy': '쉬움', 'Standard': '보통', 'Hard': '어려움',
+  'Your realm': '내 왕국', 'Enemy realm': '적 왕국',
+  'Azure': '아즈르', 'Crimson': '크림슨', 'Windrider': '윈드라이더', 'Stoneholt': '스톤홀트', 'Amber': '앰버',
+  'Random': '무작위', 'Wind': '윈드', 'Stone': '스톤',
+  'Map': '지도', 'Vale': '계곡', 'Highlands': '고원', 'Coast': '해안', 'Wilds': '야생지', 'Marsh': '늪지',
+  'Map size': '지도 크기', 'Small': '작게', 'Normal': '보통', 'Large': '크게', 'Huge': '거대',
+  'Map seed': '지도 시드', 'Growth boost': '성장 가속', 'Off': '끔', 'Game speed': '게임 속도',
+  'Start Skirmish': '스커미시 시작', 'Chronicle': '연대기', 'Settings': '설정', 'Controls': '조작법',
+  '3D models via poly.pizza: Quaternius, Kenney, Kay & Isa Lousberg, iPoly3D, mastjie, Polygonal Mind (CC0) · Poly by Google and others (CC-BY 3.0) — full list in Controls': '3D 모델 출처 poly.pizza: Quaternius, Kenney, Kay & Isa Lousberg, iPoly3D, mastjie, Polygonal Mind (CC0) · Poly by Google 외 (CC-BY 3.0) — 전체 목록은 조작법 화면 참고',
+  'Built entirely with Claude Fable 5.2 in Claude Code': 'Claude Code에서 Claude Fable 5.2가 전부 만든 게임',
+  'Unofficial Korean localization of': '비공식 한글화 —', '· original credit: SharpWizard ·': '· 원작 제작: SharpWizard ·',
+  'Random seed': '무작위 시드',
+  // ---- settings ----
+  'Language': '언어', 'Graphics quality': '그래픽 품질', 'Low': '낮음', 'Medium': '중간', 'High': '높음',
+  'Sound volume': '효과음 볼륨', 'Music volume': '음악 볼륨', 'Edge scrolling': '화면 가장자리 스크롤',
+  'On': '켬', 'Interface size': '인터페이스 크기', 'Colour-blind team colours': '색약용 팀 색상',
+  'Command hotkeys': '명령 단축키', 'Edit…': '편집…', 'Tutorial tips': '튜토리얼 도움말',
+  'Auto-lower graphics if slow': '느리면 그래픽 자동 낮춤', 'Time of day': '시간대',
+  'Cycle': '순환', 'Day': '낮', 'Dusk': '황혼', 'Night': '밤',
+  'Weather': '날씨', 'Dynamic': '변화', 'Clear': '맑음', 'Rain': '비', 'Storm': '폭풍', 'Snow': '눈', 'Fog': '안개',
+  'Back': '뒤로',
+  // ---- HUD ----
+  'Food': '식량', 'Wood': '목재', 'Gold': '금',
+  'Population / capacity (max 100)': '인구 / 수용량 (최대 100)',
+  'Settlement Age': '정착의 시대', 'Feudal Age': '봉건 시대', 'Iron Age': '철기 시대',
+  '⚡ Boost off': '⚡ 가속 끔', 'Log': '기록', 'Tech': '기술',
+  'Idle': '유휴', 'Army': '군대', '⚔ ATTACK': '⚔ 공격', 'AUTO-WORK ON': '자동 작업 켬', 'AUTO-WORK OFF': '자동 작업 끔',
+  'Growth boost: gather, build, train and research faster. Click to switch Off / 2x / 4x': '성장 가속: 채집·건설·훈련·연구가 빨라집니다. 클릭하면 끔 / 2배 / 4배로 바뀝니다',
+  'Event log': '사건 기록', 'Tech tree: everything you can build, train and research': '기술 트리: 건설·훈련·연구할 수 있는 모든 것',
+  'Select the next idle villager (.)': '다음 유휴 주민 선택 (.)', 'Select your whole army (,)': '전체 군대 선택 (,)',
+  'Charge! Send all idle soldiers against the nearest known enemy building': '돌격! 놀고 있는 모든 병사를 가장 가까운 적 건물로 보냅니다',
+  'Idle villagers automatically gather, build farms when food runs out, and build houses before you hit the population cap. Villagers you move or stop yourself are left alone.': '유휴 주민이 자동으로 자원을 채집하고, 식량이 떨어지면 농장을, 인구 한도 전에 주택을 짓습니다. 직접 이동·정지시킨 주민은 건드리지 않습니다.',
+  'Pause (P / Esc)': '일시정지 (P / Esc)', 'Show / hide resources': '자원 표시 / 숨기기', 'Show / hide units': '유닛 표시 / 숨기기',
+  'Enlarge the minimap': '미니맵 확대', 'Hide / show the camera panel': '카메라 패널 숨기기 / 보이기',
+  'Collapse / expand the bottom panel': '하단 패널 접기 / 펼치기',
+  'CAMERA': '카메라', 'drag to turn': '드래그로 회전', 'Close': '가까이', 'Far': '멀리', 'Top': '위에서', 'Reset': '초기화',
+  'Zoom out (hold)': '축소 (누르고 있기)', 'Zoom in (hold)': '확대 (누르고 있기)',
+  'Drag here: left/right rotates, up/down tilts': '여기를 드래그: 좌우 회전, 상하 기울이기',
+  'Close-up view': '근접 시점', 'Normal view': '기본 시점', 'Far view': '원거리 시점',
+  'Top-down view on/off': '내려다보기 켜기/끄기', 'Whole map on/off (M)': '전체 지도 켜기/끄기 (M)', 'Reset the camera': '카메라 초기화',
+  'Rotate left (hold) — Q': '왼쪽 회전 (누르고 있기) — Q', 'Rotate right (hold) — E': '오른쪽 회전 (누르고 있기) — E',
+  'Change the weather': '날씨 바꾸기',
+  'BOX': '선택 상자', 'IDLE': '유휴', 'ARMY': '군대', 'ACT': '실행', '⚔ ATK': '⚔ 공격', 'MAP': '지도', 'CLEAR': '해제',
+  // ---- resource / names used on command buttons ----
+  'Villager': '주민', 'Scout Cavalry': '정찰 기병', 'Spearman': '창병', 'Swordsman': '검사', 'Archer': '궁수', 'Crossbowman': '석궁병',
+  'Knight': '기사', 'Siege Cannon': '공성 대포', 'Catapult': '투석기', 'Herbalist': '약초사',
+  'Town Center': '마을 회관', 'House': '주택', 'Lumber Camp': '벌목 캠프', 'Mining Camp': '광산 캠프', 'Mill': '방앗간', 'Farm': '농장',
+  'Barracks': '병영', 'Archery Range': '사격장', 'Stable': '마구간', 'Blacksmith': '대장간', 'Watch Tower': '감시탑',
+  'Stone Wall': '석벽', 'Gate': '성문', 'Siege Workshop': '공성 공방', 'Castle': '성채', 'Wonder': '불가사의',
+  'Loom': '베틀', 'Wheelbarrow': '손수레', 'Double-Bit Axe': '양날 도끼', 'Bow Saw': '활톱', 'Gold Mining': '금 채굴',
+  'Stone Mining': '석재 채굴', 'Horse Collar': '말 멍에', 'Forging': '단조', 'Scale Armor': '비늘 갑옷', 'Fletching': '화살 제작',
+  'Padded Archer Armor': '누비 궁수 방어구', 'Iron Casting': '철 주조', 'Chain Mail': '사슬 갑옷', 'Bodkin Arrow': '보드킨 화살',
+  'Leather Archer Armor': '가죽 궁수 방어구', 'Advance to Feudal Age': '봉건 시대로 발전', 'Advance to Iron Age': '철기 시대로 발전',
+  'Deer': '사슴', 'Stag': '수사슴', 'Mountain Goat': '산양', 'Wild Turkey': '야생 칠면조', 'Wild Bull': '야생 황소', 'Cow': '소', 'Chicken': '닭',
+  'Azure Kingdom': '아즈르 왕국', 'Crimson March': '크림슨 행군', 'Windrider Clans': '윈드라이더 부족', 'Stoneholt Clans': '스톤홀트 부족', 'Amber League': '앰버 연맹',
+  'Stop': '정지', 'Delete': '삭제', 'Attack-move': '공격 이동', 'Charge the enemy!': '적에게 돌격!',
+  'Garrison in nearest tower/castle': '가장 가까운 탑/성채에 주둔', 'Cancel construction': '건설 취소', 'Cancel': '취소',
+  'Stop all current actions. Stopped villagers are left alone by Auto-work.': '현재 행동을 모두 멈춥니다. 멈춘 주민은 자동 작업이 건드리지 않습니다.',
+  'Delete the selected units. (also the Delete key)': '선택한 유닛을 삭제합니다. (Delete 키도 가능)',
+  'Delete this building. (also the Delete key)': '이 건물을 철거합니다. (Delete 키도 가능)',
+  'Demolish this foundation.': '이 기초를 철거합니다.',
+  'Click this, then click the map: the selection marches there and fights every enemy on the way.': '이 버튼을 누른 뒤 지도를 클릭하세요: 선택한 부대가 그곳으로 진군하며 길에서 만나는 모든 적과 싸웁니다.',
+  'Sends infantry and archers into the nearest tower or castle.': '보병과 궁수를 가장 가까운 탑이나 성채로 들여보냅니다.',
+  'Release all garrisoned units.': '주둔한 유닛을 모두 내보냅니다.',
+  'Click to cancel': '클릭하면 취소',
+  'Natural resource': '자연 자원',
+  // ---- controls screen ----
+  'Mouse': '마우스', 'Left click': '왼쪽 클릭', 'Select unit / building. Shift+click adds or removes.': '유닛 / 건물 선택. Shift+클릭으로 추가 또는 제외.',
+  'Left drag': '왼쪽 드래그', 'Box-select your units': '상자로 내 유닛 선택',
+  'Double click': '더블 클릭', 'Select all your units of that type on screen': '화면 안의 같은 종류 유닛을 모두 선택',
+  'Right click': '오른쪽 클릭', 'Context action: move, gather, attack, build, repair, garrison, set rally point': '상황별 명령: 이동, 채집, 공격, 건설, 수리, 주둔, 집결지 지정',
+  'Wheel': '휠', 'Zoom in / out': '확대 / 축소', 'Zooms toward the mouse pointer': '마우스 포인터 방향으로 확대/축소',
+  'Middle drag': '가운데 버튼 드래그', 'Rotate camera': '카메라 회전',
+  'Minimap': '미니맵', 'Click / drag to move the camera; right click to send selected units': '클릭 / 드래그로 카메라 이동, 오른쪽 클릭으로 선택한 유닛 이동',
+  'Keyboard': '키보드', 'WASD / Arrows': 'WASD / 방향키', 'Pan camera (also screen edges)': '카메라 이동 (화면 가장자리도 가능)',
+  'Q / E': 'Q / E', 'CAMERA panel': '카메라 패널',
+  'Drag the round dial to rotate and tilt; hold + / − to zoom; Close / Normal / Far / Top / Map presets': '둥근 다이얼을 드래그해 회전·기울이기, + / − 를 누르고 있으면 확대/축소, 가까이 / 보통 / 멀리 / 위에서 / 지도 프리셋',
+  'Alt + drag': 'Alt + 드래그', 'Orbit the camera with the left mouse button (or drag with the middle button)': '왼쪽 버튼으로 카메라 궤도 회전 (또는 가운데 버튼 드래그)',
+  'PageUp / PageDown': 'PageUp / PageDown', 'Tilt camera (also Shift+wheel)': '카메라 기울이기 (Shift+휠도 가능)',
+  'Zoom — zoom all the way out to see the whole map': '확대/축소 — 끝까지 축소하면 지도 전체가 보입니다',
+  'Whole-map overview on / off (VIEW → MAP); TOP = top-down view': '전체 지도 보기 켜기/끄기 (보기 → 지도); 위에서 = 내려다보기',
+  'Command grid hotkeys — the letter is shown on every button': '명령 칸 단축키 — 각 버튼에 글자가 표시됩니다',
+  'Assign control group (Shift+1–9 adds to group)': '부대 지정 (Shift+1–9는 부대에 추가)',
+  'Recall group (press twice to jump the camera)': '부대 불러오기 (두 번 누르면 카메라 이동)',
+  '. (period)': '. (마침표)', 'Select next idle villager': '다음 유휴 주민 선택',
+  ', (comma)': ', (쉼표)', 'Select all military units': '모든 군사 유닛 선택',
+  'Space': '스페이스', 'Center camera on selection': '선택한 대상으로 카메라 이동',
+  '⚔ ATTACK': '⚔ 공격', 'Top-bar button: all idle soldiers charge the nearest known enemy building': '상단 버튼: 놀고 있는 모든 병사가 가장 가까운 적 건물로 돌격',
+  'Soldier command: click it, then click the map — they fight everything on the way': '병사 명령: 누른 뒤 지도를 클릭 — 가는 길의 모든 적과 싸웁니다',
+  'Upgrade': '업그레이드', 'Building command: Level 2 (Feudal) and Level 3 (Iron) — more HP, armor, speed, arrows': '건물 명령: 2레벨(봉건), 3레벨(철기) — 체력·방어·속도·화살 증가',
+  'Home': 'Home', 'Jump to your Town Center': '내 마을 회관으로 이동',
+  'Delete selected unit / building': '선택한 유닛 / 건물 삭제',
+  'Esc / P': 'Esc / P', 'Cancel placement / Pause menu': '배치 취소 / 일시정지 메뉴',
+  'Shift + place': 'Shift + 배치', 'Keep placing the same building': '같은 건물을 계속 배치',
+  'AUTO-WORK': '자동 작업', 'Top-bar toggle: idle villagers gather what you need most, build farms and houses automatically. Villagers you move or stop are left alone.': '상단 토글: 유휴 주민이 가장 필요한 자원을 채집하고 농장·주택을 자동으로 짓습니다. 직접 이동·정지시킨 주민은 건드리지 않습니다.',
+  'Credits': '크레딧 (출처)', 'Models (CC0)': '모델 (CC0)', 'Models (CC-BY 3.0)': '모델 (CC-BY 3.0)',
+  'Top bar': '상단 바', 'Log = event history (click an entry to jump there) · Tech = tech tree · click the population number for the villager task list · production in progress is listed on the right edge': '기록 = 사건 기록 (항목을 클릭하면 그 위치로 이동) · 기술 = 기술 트리 · 인구 숫자를 클릭하면 주민 작업 목록 · 진행 중인 생산은 오른쪽 가장자리에 표시됩니다',
+  'Save': '저장', 'Pause menu → Save Game. The game also autosaves every 2 minutes; continue from the main menu.': '일시정지 메뉴 → 게임 저장. 2분마다 자동 저장되며, 메인 메뉴에서 이어서 할 수 있습니다.',
+  'Touch': '터치', 'One finger drag': '손가락 하나로 드래그', 'Pan the camera': '카메라 이동',
+  'Pinch / twist': '핀치 / 비틀기', 'Zoom / rotate': '확대·축소 / 회전', 'Tap': '탭', 'Select (double tap: all of type)': '선택 (더블 탭: 같은 종류 모두)',
+  'Long press': '길게 누르기', 'Context action (move, gather, attack...)': '상황별 명령 (이동, 채집, 공격...)',
+  'BOX button': '선택 상자 버튼', 'Next drag draws a selection box': '다음 드래그가 선택 상자가 됩니다',
+  'ACT button': '실행 버튼', 'Next tap issues a context action': '다음 탭이 상황별 명령이 됩니다',
+  'IDLE / ARMY': '유휴 / 군대', 'Select idle villager / all military': '유휴 주민 / 모든 군사 유닛 선택',
+  // ---- pause / chronicle / tech / hotkeys / story / end ----
+  'Paused': '일시정지', 'Resume': '계속하기', 'Save Game': '게임 저장', 'Load Game': '게임 불러오기', 'Restart': '다시 시작',
+  'Surrender': '항복', 'Quit to Menu': '메뉴로 나가기',
+  'Chronicle of Ironvale': '아이언베일 연대기', 'Tech Tree': '기술 트리',
+  '✔ you have it · bright = available now · 🔒 needs a later age or another upgrade · hover for details': '✔ 보유 · 밝음 = 지금 가능 · 🔒 이후 시대나 다른 업그레이드 필요 · 마우스를 올리면 자세히 표시',
+  'Command hotkeys': '명령 단축키',
+  'One letter per command-button position (3 rows of 6, same layout as the command grid).': '명령 버튼 칸마다 글자 하나 (6칸씩 3줄, 명령 칸과 같은 배치).',
+  'Defaults': '기본값', 'Begin': '시작', 'Victory': '승리', 'Defeat': '패배', 'Next Chapter ▶': '다음 장 ▶', 'Play Again': '다시 하기', 'Main Menu': '메인 메뉴',
+  'Replay Chapter': '장 다시 하기', 'Retry Chapter': '장 다시 도전',
+  'Every slot needs a letter.': '모든 칸에 글자가 필요합니다.', 'W A S D Q E P M are used by the camera and menus.': 'W A S D Q E P M 은 카메라와 메뉴에 사용됩니다.', 'Each letter can only be used once.': '글자는 한 번씩만 쓸 수 있습니다.',
+  // ---- notifications (fixed) ----
+  'Saved game loaded': '저장한 게임을 불러왔습니다', 'Game saved': '게임을 저장했습니다',
+  'Your base is under attack!': '기지가 공격받고 있습니다!', 'Your army is under attack!': '군대가 공격받고 있습니다!',
+  'The bull charges your hunters!': '황소가 사냥꾼에게 돌진합니다!', 'Treasure recovered!': '보물을 되찾았습니다!',
+  'A farm has been exhausted': '농장의 수확이 끝났습니다', 'Garrison is full': '주둔 공간이 가득 찼습니다',
+  'Population limit reached (100)': '인구 한도에 도달했습니다 (100)', 'Population limit reached — build Houses': '인구 한도 도달 — 주택을 지으세요',
+  'Auto-work: building a House': '자동 작업: 주택 건설 중',
+  'Click the start, then the end of the wall': '벽의 시작점을 클릭한 뒤 끝점을 클릭하세요',
+  'Cannot build there': '그곳에는 지을 수 없습니다',
+  'Click the map to attack-move there (right click to cancel)': '지도를 클릭하면 그곳으로 공격 이동합니다 (오른쪽 클릭으로 취소)',
+  'Select soldiers first (press , for your army)': '먼저 병사를 선택하세요 (, 키로 전체 군대 선택)',
+  'Charge! Marching on the enemy homeland': '돌격! 적의 본거지로 진군합니다',
+  'No idle villagers': '유휴 주민이 없습니다', 'You have no military units': '군사 유닛이 없습니다', 'No villager available': '사용할 수 있는 주민이 없습니다',
+  'Auto-work disabled': '자동 작업을 껐습니다', 'Auto-work enabled: idle villagers gather, farm and build houses automatically': '자동 작업을 켰습니다: 유휴 주민이 자동으로 채집하고 농사짓고 주택을 짓습니다',
+  'The skies clear': '하늘이 맑아졌습니다', 'It starts to rain': '비가 내리기 시작합니다', 'A storm rolls in!': '폭풍이 몰려옵니다!',
+  'Snow begins to fall': '눈이 내리기 시작합니다', 'A thick fog creeps in': '짙은 안개가 밀려옵니다',
+  'Weather: dynamic (changes over time)': '날씨: 변화형 (시간에 따라 바뀜)',
+  'Could not save: browser storage is full or blocked': '저장 실패: 브라우저 저장소가 가득 찼거나 막혀 있습니다',
+  'Growth boost off': '성장 가속 끔',
+  'Graphics lowered to Medium to keep the game smooth': '원활한 진행을 위해 그래픽을 중간으로 낮췄습니다',
+  'Graphics lowered to Low to keep the game smooth': '원활한 진행을 위해 그래픽을 낮음으로 낮췄습니다',
+  'Resolution reduced to keep the game smooth': '원활한 진행을 위해 해상도를 낮췄습니다',
+  'Team colours change the next time the game is opened': '팀 색상은 다음에 게임을 열 때 바뀝니다',
+  'Nothing has happened yet.': '아직 아무 일도 없었습니다.',
+  'Could not load three.js — check your connection.': 'three.js를 불러오지 못했습니다 — 연결을 확인하세요.',
+});
+I18N.addAttr({ 'Stone': '석재' });
+const _RK = { food: '식량', wood: '목재', stone: '석재', gold: '금' };
+const _rk = s => _RK[s.toLowerCase()] || s;
+[
+  [/^Build (.+?)( ★)?$/, (m, t) => t(m[1]) + ' 건설' + (m[2] || '')],
+  [/^Train (.+?)( ★)?$/, (m, t) => t(m[1]) + ' 훈련' + (m[2] || '')],
+  [/^Requires (?:a )?(.+)$/, (m, t) => '필요: ' + t(m[1])],
+  [/^Not enough (food|wood|stone|gold)$/i, m => _rk(m[1]) + ' 부족'],
+  [/^(food|wood|stone|gold)$/i, m => _rk(m[1])],
+  [/^Place (.+) \(right click to cancel\)$/, (m, t) => t(m[1]) + ' 배치 (오른쪽 클릭으로 취소)'],
+  [/^(.+) completed$/, (m, t) => t(m[1]) + ' 완공'],
+  [/^(.+) researched$/, (m, t) => t(m[1]) + ' 연구 완료'],
+  [/^(.+) upgraded to level (\d)$/, (m, t) => t(m[1]) + ' 레벨 ' + m[2] + '로 업그레이드'],
+  [/^Upgrade to Level (\d)$/, m => '레벨 ' + m[1] + ' 업그레이드'],
+  [/^(.+) \(researching\)$/, (m, t) => t(m[1]) + ' (연구 중)'],
+  [/^Ungarrison \((\d+)\)$/, m => '주둔 해제 (' + m[1] + ')'],
+  [/^You have advanced to the (.+)!$/, (m, t) => t(m[1]) + '에 도달했습니다!'],
+  [/^(.+) has advanced to the (.+)$/, (m, t) => t(m[1]) + '이(가) ' + t(m[2]) + '에 도달했습니다'],
+  [/^Chapter (\d+)$/, m => '제 ' + m[1] + '장'],
+  [/^Group (\d+) set \((\d+)\)$/, m => m[1] + '번 부대 지정 (' + m[2] + ')'],
+  [/^Game saved to slot (\w+)$/, m => m[1] + '번 슬롯에 게임을 저장했습니다'],
+  [/^Charge! Attacking the (.+)$/, (m, t) => '돌격! ' + t(m[1]) + ' 공격'],
+  [/^You lead the (.+?)\. Advance through the ages and defeat the (.+)!$/, (m, t) => '당신은 ' + t(m[1]) + '을(를) 이끕니다. 시대를 발전시켜 ' + t(m[2]) + '을(를) 물리치세요!'],
+  [/^Time of day: (.+)$/, (m, t) => '시간대: ' + ({ 'day/night cycle': '낮밤 순환', 'always day': '항상 낮', 'golden dusk': '황금빛 황혼', night: '밤' }[m[1]] || m[1])],
+  [/^Growth boost (\d)x: you gather, build, train and research \d times faster$/, m => '성장 가속 ' + m[1] + '배: 채집·건설·훈련·연구가 ' + m[1] + '배 빨라집니다'],
+  [/^No (food|wood|stone|gold) source found nearby$/i, m => '근처에 ' + _rk(m[1]) + ' 자원이 없습니다'],
+  [/^(Idle|Army) (\d+)$/, m => (m[1] === 'Idle' ? '유휴 ' : '군대 ') + m[2]],
+  [/^Wonder (\d+:\d+)$/, m => '불가사의 ' + m[1]],
+].forEach(([re, fn]) => I18N.rule(re, fn));
+I18N.start();
+
 // ---- 01_core.js ----
 'use strict';
 // =====================================================================
